@@ -22,18 +22,18 @@ html, body {
     right: 30px;
     z-index: 100;
     
-    /* Style du texte avec la nouvelle police */
+    /* Style du texte avec Roboto */
     font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-size: 1rem;
-    letter-spacing: 0.15em;
+    font-weight: 400;
+    font-size: 0.95rem;
+    letter-spacing: 0.2em;
     text-transform: lowercase;
-    font-variation-settings: "wdth" 100;
 
-    /* LA MAGIE DU NOIR OU BLANC */
+    /* SOLUTION 2 : CONTRASTE BINAIRE */
     color: white; 
     mix-blend-mode: difference;
-    filter: contrast(2000%) invert(0%);
+    /* On utilise un filtre de seuil (threshold) pour forcer soit 0% soit 100% de luminosité */
+    filter: brightness(100) contrast(100);
 }
 
 /* Conteneur et images en fondu */
