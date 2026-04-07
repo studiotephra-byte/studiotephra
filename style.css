@@ -16,7 +16,12 @@ html, body {
     font-style: normal;
 }
 
-.fixed-email {
+.fixed-email a:hover{
+    opacity: 0,7;
+    color: inherit; /* Le lien prend la couleur (blanc) définie dans .fixed-email */
+    text-decoration: none; /* Supprime le soulignement */
+    cursor: pointer; /* Affiche la main au survol */
+    
     position: fixed;
     bottom: 30px;
     right: 30px;
