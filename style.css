@@ -1,10 +1,10 @@
 /* Configuration de base */
-body, html {
+
+html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    background-color: #000;
     overflow: hidden; /* Empêche le défilement manuel pour privilégier le fondu */
 }
 
@@ -12,7 +12,7 @@ body, html {
 .fixed-email {
     position: fixed;
     bottom: 30px;
-    left: 30px;
+    right: 30px;
     z-index: 100;
     color: white;
     font-family: 'Helvetica', sans-serif;
@@ -24,7 +24,7 @@ body, html {
 
 /* Conteneur et images en fondu */
 .slideshow {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: 100vh;
 }
