@@ -1,54 +1,50 @@
-/* 1. Importation de la police Roboto depuis Google Fonts */
+/* 1. Importation de la police Roboto */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap');
 
-/* Configuration de base */
+/* Configuration globale */
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Empêche le défilement manuel pour privilégier le fondu */
+    overflow: hidden;
     background-color: #000;
-    /* Application de Roboto par défaut */
     font-family: "Roboto", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 300; /* Poids léger pour un style épuré */
-    font-style: normal;
 }
 
-.fixed-email a:hover{
-    opacity: 0,7;
-    color: inherit; /* Le lien prend la couleur (blanc) définie dans .fixed-email */
-    text-decoration: none; /* Supprime le soulignement */
-    cursor: pointer; /* Affiche la main au survol */
-    
+/* 2. Le conteneur fixe de l'email */
+.fixed-email {
     position: fixed;
     bottom: 30px;
     right: 30px;
     z-index: 100;
     
-    /* Style du texte avec Roboto */
+    /* Style du texte */
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 0.95rem;
     letter-spacing: 0.2em;
     text-transform: lowercase;
-    
-    /* Technique du contour (Stroke) pour garantir la lisibilité */
-    color: white; 
-    text-shadow: 
-        1px 1px 0 #000,
-       -1px -1px 0 #000,  
-        1px -1px 0 #000,
-       -1px  1px 0 #000; /* Crée un micro-contour noir invisible mais efficace */
 
-    /* SOLUTION 2 : CONTRASTE BINAIRE */
-    color: white; 
+    /* SOLUTION BINAIRE : NOIR OU BLANC */
     mix-blend-mode: difference;
     filter: grayscale(1) contrast(999) invert(1);
 }
 
-/* Conteneur et images en fondu */
+/* 3. Style du lien (cliquable) */
+.fixed-email a {
+    color: white !important; /* Base blanche indispensable pour le filtre */
+    text-decoration: none;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+/* 4. Effet au survol */
+.fixed-email a:hover {
+    opacity: 0.7; /* Utilisation du point pour la décimale */
+}
+
+/* --- Diaporama --- */
 .slideshow {
     position: absolute;
     width: 100%;
@@ -64,20 +60,19 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0; /* Caché par défaut */
-    animation: fadeAnimation 32s infinite; /* 8 images x 4s par image = 32s */
+    opacity: 0;
+    animation: fadeAnimation 32s infinite;
 }
 
-/* Animation du fondu */
 @keyframes fadeAnimation {
     0% { opacity: 0; }
-    5% { opacity: 1; }  /* Apparition */
-    12.5% { opacity: 1; } /* Reste visible */
-    17.5% { opacity: 0; } /* Disparition */
+    5% { opacity: 1; }
+    12.5% { opacity: 1; }
+    17.5% { opacity: 0; }
     100% { opacity: 0; }
 }
 
-/* Décalage pour chaque image (8 images au total) */
+/* Décalages d'animation */
 .slide:nth-child(1) { animation-delay: 0s; }
 .slide:nth-child(2) { animation-delay: 4s; }
 .slide:nth-child(3) { animation-delay: 8s; }
