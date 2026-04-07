@@ -40,8 +40,7 @@ html, body {
     /* SOLUTION 2 : CONTRASTE BINAIRE */
     color: white; 
     mix-blend-mode: difference;
-    /* On utilise un filtre de seuil (threshold) pour forcer soit 0% soit 100% de luminosité */
-    filter: brightness(100) contrast(100);
+    filter: grayscale(1) contrast(999) invert(1);
 }
 
 /* Conteneur et images en fondu */
