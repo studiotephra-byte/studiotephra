@@ -8,18 +8,21 @@ html, body {
     overflow: hidden; /* Empêche le défilement manuel pour privilégier le fondu */
 }
 
-/* Email fixe en bas à gauche */
 .fixed-email {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    left: 30px;
     z-index: 100;
-    color: white;
+    
+    /* Style du texte */
     font-family: 'Helvetica', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 0.1em;
-    mix-blend-mode: difference; /* Adaptation auto selon la clarté de l'image */
     text-transform: lowercase;
+
+    /* LA MAGIE DU NOIR OU BLANC */
+    color: white; 
+    mix-blend-mode: difference;
 }
 
 /* Conteneur et images en fondu */
