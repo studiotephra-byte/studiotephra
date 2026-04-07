@@ -23,6 +23,7 @@ html, body {
     /* LA MAGIE DU NOIR OU BLANC */
     color: white; 
     mix-blend-mode: difference;
+    filter: contrast(2000%) invert(0%);
 }
 
 /* Conteneur et images en fondu */
