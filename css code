@@ -1,0 +1,55 @@
+/* Style Minimaliste pour Laboratoire d'Architecture */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica', Arial, sans-serif;
+    scroll-behavior: smooth;
+    background-color: #fff;
+}
+
+.page {
+    height: 100vh; /* Chaque section prend 100% de la hauteur de l'écran */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.content {
+    width: 80%;
+}
+
+h1, h2 {
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 50vh;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+}
+
+.email {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+}
+
+.links {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    margin-top: 20px;
+}
