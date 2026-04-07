@@ -28,6 +28,14 @@ html, body {
     font-size: 0.95rem;
     letter-spacing: 0.2em;
     text-transform: lowercase;
+    
+    /* Technique du contour (Stroke) pour garantir la lisibilité */
+    color: white; 
+    text-shadow: 
+        1px 1px 0 #000,
+       -1px -1px 0 #000,  
+        1px -1px 0 #000,
+       -1px  1px 0 #000; /* Crée un micro-contour noir invisible mais efficace */
 
     /* SOLUTION 2 : CONTRASTE BINAIRE */
     color: white; 
