@@ -10,39 +10,44 @@ html, body {
     background-color: #000;
 }
 
-/* 2. LE CONTENEUR (C'est lui qui gère le Noir/Blanc) */
-.fixed-email {
+/* 2. Zones interactives (Bas Gauche et Bas Droite) */
+.fixed-instagram, .fixed-email {
     position: fixed;
     bottom: 30px;
-    right: 30px;
-    z-index: 1000; /* Augmenté pour être sûr qu'il est au-dessus de tout */
+    z-index: 1000;
     
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 0.95rem;
     letter-spacing: 0.2em;
     text-transform: lowercase;
-
-    /* FILTRE RADICAL */
-    mix-blend-mode: difference;
-    filter: grayscale(1) contrast(999) invert(1);
-    pointer-events: none; /* Permet de cliquer "au travers" du div sur le lien */
 }
 
-/* 3. LE LIEN (C'est lui qui force la visibilité) */
-.fixed-email a {
+.fixed-instagram {
+    left: 30px; /* Position Instagram */
+}
+
+.fixed-email {
+    right: 30px; /* Position Email */
+}
+
+/* 3. Liens invisibles mais cliquables */
+.fixed-instagram a, .fixed-email a {
     display: inline-block;
-    color: #FFFFFF !important; /* FORCE LE BLANC PUR */
     text-decoration: none !important;
-    pointer-events: auto; /* Réactive le clic sur le lien uniquement */
-    visibility: visible !important;
+    
+    /* RENDRE LE TEXTE TOTALEMENT INCRUSTÉ (INVISIBLE) */
+    color: transparent !important; 
+    
+    /* Zone de clic confortable (40px de haut/large minimum autour du lien) */
+    padding: 20px; 
+    cursor: pointer;
+    
+    /* Optionnel : transition si vous décidez de remettre une opacité au hover plus tard */
+    transition: opacity 0.3s ease;
 }
 
-.fixed-email a:hover {
-    opacity: 0.7;
-}
-
-/* --- DIAPORAMA --- */
+/* --- DIAPORAMA (Lien avec le dossier /images) --- */
 .slideshow {
     position: absolute;
     top: 0;
@@ -70,6 +75,7 @@ html, body {
     100% { opacity: 0; }
 }
 
+/* Décalages d'animation pour 8 images */
 .slide:nth-child(1) { animation-delay: 0s; }
 .slide:nth-child(2) { animation-delay: 4s; }
 .slide:nth-child(3) { animation-delay: 8s; }
