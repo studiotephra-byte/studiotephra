@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDIO TEPHRA | Architecture</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="page">
+        <div class="content">
+            <h1>STUDIO TEPHRA</h1> <p class="subtitle">COLLECTIF ET LABORATOIRE D'ARCHITECTURE</p> <div class="main-visual">
+                <img src="photo1.jpg" alt="Visual Studio Tephra">
+            </div>
+            <div class="links">
+                <span>GMAIL</span> | <span>INSTA</span> </div>
+        </div>
+    </section>
+
+    <section class="page">
+        <div class="content">
+            <h2>STUDIO TEPHRA</h2> <p class="subtitle">COLLECTIF ET LABORATOIRE D'ARCHITECTURE</p> <div class="secondary-visual">
+                <img src="element-visuel.jpg" alt="Architecture Detail">
+            </div>
+            <p class="email">studio.tephra@gmail.com</p> </div>
+    </section>
+
+    <section class="page">
+        <div class="content">
+            <h2>STUDIO TEPHRA</h2>
+            <p class="subtitle">COLLECTIF ET LABORATOIRE D'ARCHITECTURE</p>
+            <p class="email">studio.tephra@gmail.com</p>
+        </div>
+    </section>
+
+</body>
+</html>
