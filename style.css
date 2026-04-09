@@ -152,59 +152,58 @@ html, body {
     object-fit: cover;
 }
 
-/* Style commun pour tous les liens de la page Info */
-.contact-sidebar-custom a, 
-.fixed-back a {
+/* --- NAVIGATION HAUTE CENTRÉE --- */
+
+.contact-header {
+    position: fixed;
+    top: 30px;              /* Distance du haut */
+    left: 50%;              /* Placement au milieu de l'écran */
+    transform: translateX(-50%); /* Décalage vers la gauche de la moitié de sa propre largeur */
+    display: flex;
+    gap: 50px;              /* Espace horizontal entre les éléments */
+    white-space: nowrap;    /* Empêche les mots de passer à la ligne */
+    z-index: 1000;
+}
+
+.contact-header a {
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    font-weight: 900;
+    font-size: 20px;
     text-decoration: none;
     text-transform: lowercase;
-    color: #000000; /* Contact en noir comme demandé */
-    z-index: 100;
-    -webkit-tap-highlight-color: transparent;
+    color: #000000;
+    transition: opacity 0.3s;
 }
 
-/* Positionnement des 3 boutons de contact (X et Y modifiables) */
-.contact-sidebar-custom a {
-    position: fixed;
-    right: 30px; /* Axe X */
-    font-size: 14px;
-    padding: 10px;
+.contact-header a:hover {
+    opacity: 0.6;
 }
 
-.pos-mail { top: 150px; }  /* Premier bouton en haut */
-.pos-tel  { top: 190px; }  /* Deuxième bouton */
-.pos-insta { top: 230px; } /* Troisième bouton */
-
-/* Bouton Retour (Bas Droite) */
+/* --- BOUTON RETOUR (Reste en bas à droite) --- */
 .fixed-back {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .fixed-back a {
-    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 20px;
+    text-decoration: none;
+    color: #000000;
 }
 
-/* --- ADAPTATION MOBILE INFO --- */
+/* --- ADAPTATION MOBILE --- */
 @media (max-width: 768px) {
-    .contact-sidebar-custom a {
-        right: 20px;
-        font-size: 14px;
+    .contact-header {
+        top: 25px;
+        gap: 25px;          /* Plus serré sur mobile pour tenir en largeur */
     }
-    
-    .pos-mail { top: 25px; }
-    .pos-tel  { top: 65px; }
-    .pos-insta { top: 105px; }
 
-    .fixed-back {
-        bottom: 25px;
-        right: 20px;
-    }
-    
+    .contact-header a, 
     .fixed-back a {
-        font-size: 16px;
+        font-size: 15px;    /* Texte plus petit pour éviter de déborder */
     }
 }
