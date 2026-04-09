@@ -133,3 +133,78 @@ html, body {
     .foot-left { left: 20px; }
     .foot-right { right: 20px; }
 }
+
+/* --- CONFIGURATION PAGE INFO --- */
+
+/* Fond stabilisé */
+.info-page .background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.info-page .background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Style commun pour tous les liens de la page Info */
+.contact-sidebar-custom a, 
+.fixed-back a {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    text-decoration: none;
+    text-transform: lowercase;
+    color: #000000; /* Contact en noir comme demandé */
+    z-index: 100;
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Positionnement des 3 boutons de contact (X et Y modifiables) */
+.contact-sidebar-custom a {
+    position: fixed;
+    right: 30px; /* Axe X */
+    font-size: 20px;
+    padding: 10px;
+}
+
+.pos-mail { top: 30px; }  /* Premier bouton en haut */
+.pos-tel  { top: 70px; }  /* Deuxième bouton */
+.pos-insta { top: 110px; } /* Troisième bouton */
+
+/* Bouton Retour (Bas Droite) */
+.fixed-back {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+}
+
+.fixed-back a {
+    font-size: 20px;
+}
+
+/* --- ADAPTATION MOBILE INFO --- */
+@media (max-width: 768px) {
+    .contact-sidebar-custom a {
+        right: 20px;
+        font-size: 18px;
+    }
+    
+    .pos-mail { top: 25px; }
+    .pos-tel  { top: 65px; }
+    .pos-insta { top: 105px; }
+
+    .fixed-back {
+        bottom: 25px;
+        right: 20px;
+    }
+    
+    .fixed-back a {
+        font-size: 16px;
+    }
+}
