@@ -240,11 +240,15 @@ html, body {
 
 @media (max-width: 768px) {
     
-    /* C'est ici qu'on insère l'ancrage de la photo */
     .info-page .background-image {
-        object-position: left bottom !important; 
+        transform: scale(0.8);      /* Réduit l'image à 80% de sa taille */
+        transform-origin: left bottom; /* L'image rétrécit vers le coin bas gauche */
+        width: 100vw;
+        height: 100vh;
         object-fit: cover;
     }
+}
+
 
     /* Vos autres réglages mobiles déjà existants (tailles de texte, etc.) */
     .contact-header {
