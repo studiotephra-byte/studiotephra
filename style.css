@@ -238,43 +238,16 @@ html, body {
 }
 /* --- Tout en bas de votre fichier style.css --- */
 
-/* --- ADAPTATION MOBILE (Rendu précis) --- */
-
-@media (max-width: 768px) {
     
-  .info-page .background-container {
-        position: fixed;
-        top: 0;
-        left: 0;
+/* --- ADAPTATION MOBILE (< 768px) --- */
+@media (max-width: 768px) {
+    .info-page .background-image {
+        /* On s'assure que sur mobile l'image occupe bien 100% */
         width: 100vw;
         height: 100vh;
-        overflow: hidden; /* Très important : cache les 2/3 qui dépassent */
-    }
-
-    .info-page .background-image {
-        /* L'image fait 3 fois la largeur de l'écran */
-        width: 200vw; 
-        height: 100vh;
-        
-        /* On conserve les proportions sans étirer */
         object-fit: cover;
-        
-        /* On cale l'image sur son bord gauche et son bord bas */
-        object-position: left bottom;
-
-        /* Positionnement pour être sûr que le tiers gauche soit celui affiché */
-        position: absolute;
-        left: 0;
-        bottom: 0;
+        object-position: center !important;
     }
-
-    /* Ajustement optionnel : on s'assure que le container de fond ne bloque pas le clic */
-    .info-page .background-container {
-        display: flex;
-        align-items: flex-end;
-        justify-content: flex-start;
-    }
-}
 
     /* Vos autres réglages mobiles déjà existants (tailles de texte, etc.) */
     .contact-header {
