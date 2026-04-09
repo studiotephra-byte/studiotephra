@@ -110,7 +110,7 @@ html, body {
     position: absolute;
     bottom: 30px;
     font-size: 15px;
-    font-weight: 150;
+    font-weight: 400;
     text-decoration: none;
     z-index: 100;
     -webkit-tap-highlight-color: transparent;
@@ -204,7 +204,7 @@ html, body {
 
 .contact-header a {
     font-family: 'Roboto', sans-serif;
-    font-weight: 150;
+    font-weight: 400;
     font-size: 15px;
     text-decoration: none;
     text-transform: lowercase;
@@ -226,7 +226,7 @@ html, body {
 
 .fixed-back a {
     font-family: 'Roboto', sans-serif;
-    font-weight: 150;
+    font-weight: 400;
     font-size: 15px;
     text-decoration: none;
     color: #000000;
