@@ -63,7 +63,7 @@ html, body {
 
 .center-content p {
     font-size: 24px;
-    font-weight: 900;
+    font-weight: 600;
     margin-top: 10px;
     letter-spacing: 0.05em;
 }
@@ -72,8 +72,8 @@ html, body {
 .footer-links a {
     position: absolute;
     bottom: 30px;
-    font-size: 20px;
-    font-weight: 900;
+    font-size: 14px;
+    font-weight: 400;
     text-decoration: none;
     z-index: 100;
     -webkit-tap-highlight-color: transparent;
@@ -156,7 +156,7 @@ html, body {
 .contact-sidebar-custom a, 
 .fixed-back a {
     font-family: 'Roboto', sans-serif;
-    font-weight: 900;
+    font-weight: 400;
     text-decoration: none;
     text-transform: lowercase;
     color: #000000; /* Contact en noir comme demandé */
@@ -168,13 +168,13 @@ html, body {
 .contact-sidebar-custom a {
     position: fixed;
     right: 30px; /* Axe X */
-    font-size: 20px;
+    font-size: 14px;
     padding: 10px;
 }
 
-.pos-mail { top: 30px; }  /* Premier bouton en haut */
-.pos-tel  { top: 70px; }  /* Deuxième bouton */
-.pos-insta { top: 110px; } /* Troisième bouton */
+.pos-mail { top: 150px; }  /* Premier bouton en haut */
+.pos-tel  { top: 190px; }  /* Deuxième bouton */
+.pos-insta { top: 230px; } /* Troisième bouton */
 
 /* Bouton Retour (Bas Droite) */
 .fixed-back {
@@ -185,14 +185,14 @@ html, body {
 }
 
 .fixed-back a {
-    font-size: 20px;
+    font-size: 14px;
 }
 
 /* --- ADAPTATION MOBILE INFO --- */
 @media (max-width: 768px) {
     .contact-sidebar-custom a {
         right: 20px;
-        font-size: 18px;
+        font-size: 14px;
     }
     
     .pos-mail { top: 25px; }
