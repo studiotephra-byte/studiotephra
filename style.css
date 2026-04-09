@@ -43,29 +43,66 @@ html, body {
 }
 
 /* --- 4. TEXTE CENTRAL (Studio Tephra) --- */
+/* --- CONFIGURATION TYPOGRAPHIQUE (3 LIGNES) --- */
+
 .center-content {
     z-index: 100;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Bloc des deux premières lignes */
+.text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 0.82; /* Rapproche "STUDIO" et "TEPHRA" */
+}
+
+/* LIGNE 1 : "STUDIO" (Moyenne) */
+.word-studio {
+    font-size: 36px;       /* Taille moyenne */
+    font-weight: 700;      /* Roboto Bold */
+    text-transform: uppercase;
+    letter-spacing: 0.1em; /* Léger espacement */
+}
+
+/* LIGNE 2 : "TEPHRA" (Massive) */
+.word-tephra {
+    font-size: 110px;      /* Taille massive */
+    font-weight: 900;      /* Roboto Black */
+    text-transform: uppercase;
+    letter-spacing: -0.01em; /* Légère compression pour l'impact */
+}
+
+/* LIGNE 3 : "ARCHITECTURE..." (Petite & Espacée) */
+.center-content .subtitle {
+    font-size: 16px;       /* Petite taille */
+    font-weight: 700;      /* Roboto Bold */
+    margin-top: 15px;      /* Espace entre TEPHRA et la description */
+    text-transform: uppercase;
+    letter-spacing: 0.18em; /* Fort espacement pour l'élégance architecturale */
+}
+
+/* On conserve le lien vers INFO */
 .title-link {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent; /* Supprime le flash bleu sur mobile */
 }
 
-.center-content h1 {
-    font-size: 74px;
-    font-weight: 1200;
-    margin: 0;
-    letter-spacing: -0.01em;
-}
+/* --- ADAPTATION MOBILE --- */
 
-.center-content p {
-    font-size: 24px;
-    font-weight: 400;
-    margin-top: 10px;
-    letter-spacing: 0.05em;
+@media (max-width: 768px) {
+    .word-studio { font-size: 24px; }
+    .word-tephra { font-size: 68px; }
+    .center-content .subtitle { 
+        font-size: 10px; 
+        margin-top: 10px;
+        letter-spacing: 0.1em;
+    }
 }
 
 /* --- 5. FOOTER (Instagram & Mail) --- */
