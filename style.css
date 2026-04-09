@@ -10,7 +10,19 @@ html, body {
     background-color: #000;
 }
 
-/* 2. Zones interactives (Bas Gauche et Bas Droite) */
+
+/* Zone cliquable centrale pour info.html */
+.center-link {
+    position: fixed;
+    top: 20%;    /* Laisse l'espace libre en haut */
+    bottom: 20%; /* Protège les liens Instagram/Email en bas */
+    left: 20%;
+    right: 20%;
+    z-index: 500; /* Priorité moyenne : au-dessus des images, sous les liens de contact */
+    cursor: pointer;
+    background: transparent;
+    
+/* 2. Zones interactives (Bas Gauche et Bas Droite) */    
 .fixed-instagram, .fixed-email {
     position: fixed;
     bottom: 30px;
