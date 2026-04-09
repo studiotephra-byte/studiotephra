@@ -238,14 +238,15 @@ html, body {
 }
 /* --- Tout en bas de votre fichier style.css --- */
 
+/* --- ADAPTATION MOBILE (Rendu précis) --- */
 @media (max-width: 768px) {
-    
     .info-page .background-image {
-        transform: scale(0.8);      /* Réduit l'image à 80% de sa taille */
-        transform-origin: left bottom; /* L'image rétrécit vers le coin bas gauche */
-        width: 100vw;
+        /* Force l'ancrage bas-gauche sur smartphone */
+        object-position: left bottom !important; 
+        
+        /* Assure que l'image remplit tout l'écran vertical */
         height: 100vh;
-        object-fit: cover;
+        width: 100vw;
     }
 }
 
