@@ -6,27 +6,22 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Empêche tout défilement et stabilise le zoom */
+    overflow: hidden; /* Stabilise le zoom */
     background-color: #000;
 }
 
-/* 2. ZONE CENTRALE CLIQUABLE (Correction du zoom) */
+/* 2. NAVIGATION COMMUNE & LANDING PAGE */
 .center-link {
     position: fixed;
-    top: 15%;    
-    bottom: 15%; 
-    left: 15%;   
-    right: 15%;  
-    z-index: 500; 
+    top: 15%; bottom: 15%; left: 15%; right: 15%;
+    z-index: 500;
     cursor: pointer;
     background: transparent;
-    display: block; /* Assure que le lien occupe bien l'espace */
+    display: block;
 }
 
-/* 3. ZONES FIXES (Instagram & Email) */
 .fixed-instagram, .fixed-email {
     position: fixed;
-    bottom: 10px;
     z-index: 1000;
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -35,102 +30,40 @@ html, body {
     text-transform: lowercase;
 }
 
+/* Positionnement vertical (Axe Y) pour les boutons du bas */
+.fixed-instagram, .fixed-email { bottom: 10px; } 
+
+/* Positionnement horizontal (Axe X) */
 .fixed-instagram { left: 30px; }
 .fixed-email { right: 30px; }
 
 .fixed-instagram a, .fixed-email a {
     display: inline-block;
-    color: transparent !important; /* Reste incrusté/invisible */
+    color: transparent !important;
     padding: 20px;
     text-decoration: none;
     cursor: pointer;
 }
 
-/* 4. DIAPORAMA (Correction de l'affichage) */
+/* 3. DIAPORAMA (Landing page) */
 .slideshow {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 10; /* Sous le lien central */
+    top: 0; left: 0; width: 100%; height: 100vh;
+    z-index: 10;
 }
 
 .slide {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh; /* Force la hauteur à 100% de l'écran pour éviter le zoom */
-    object-fit: cover; /* Recadre l'image proprement sans déformer */
+    top: 0; left: 0; width: 100%; height: 100vh;
+    object-fit: cover;
     opacity: 0;
     animation: fadeAnimation 32s infinite;
 }
 
-/* 5. PAGE INFO (Correction spécifique du zoom) */
+/* 4. PAGE INFO (Fond & Image) */
 .background-container {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.background-image {
-    width: 100%;
-    height: 100vh; /* Force l'image à ne pas dépasser la hauteur de l'écran */
-    object-fit: cover; /* Recadre proprement sans déformer ni zoomer */
-    display: block;
-    object-position: center; /* L'image restera centrée malgré le recadrage */
-}
-/* --- PAGE INFO : NAVIGATION --- */
-
-/* 1. Les 3 boutons de contact (Centrés à droite) */
-.contact-sidebar-center {
-    position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Espace entre mail, tel et insta */
-    z-index: 1000;
-}
-
-.contact-sidebar-center a {
-    display: block;
-    padding: 20px 30px;
-    color: transparent !important;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* 2. Le bouton retour (Bas droite) */
-/* On utilise la classe .fixed-email que vous avez déjà pour index.html */
-.fixed-email {
-    position: fixed;
-    bottom: 15px; /* Aligné sur votre demande de baisser la hauteur */
-    right: 30px;
-    z-index: 1000;
-}
-
-.fixed-email a {
-    display: inline-block;
-    padding: 20px;
-    color: transparent !important;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* 3. Stabilisation du fond info */
-.background-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
+    top: 0; left: 0; width: 100%; height: 100vh;
     z-index: 1;
     overflow: hidden;
 }
@@ -140,9 +73,37 @@ html, body {
     height: 100%;
     object-fit: cover;
     display: block;
+    object-position: center;
 }
 
-/* Animation du fondu */
+/* 5. CONTACT SIDEBAR (Réglages individuels X et Y) */
+.contact-sidebar-custom a {
+    position: fixed;
+    z-index: 1001;
+    color: transparent !important;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 20px; /* Taille de la zone de clic */
+}
+
+/* Modifiez les valeurs ci-dessous pour ajuster la position */
+
+.pos-mail {
+    right: 20px; /* Axe X */
+    top: 40%;    /* Axe Y */
+}
+
+.pos-tel {
+    right: 20px; /* Axe X */
+    top: 50%;    /* Axe Y */
+}
+
+.pos-insta {
+    right: 20px; /* Axe X */
+    top: 60%;    /* Axe Y */
+}
+
+/* 6. ANIMATIONS */
 @keyframes fadeAnimation {
     0% { opacity: 0; }
     5% { opacity: 1; }
@@ -151,7 +112,6 @@ html, body {
     100% { opacity: 0; }
 }
 
-/* Décalages pour 8 images */
 .slide:nth-child(1) { animation-delay: 0s; }
 .slide:nth-child(2) { animation-delay: 4s; }
 .slide:nth-child(3) { animation-delay: 8s; }
