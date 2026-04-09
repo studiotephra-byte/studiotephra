@@ -89,17 +89,17 @@ html, body {
 /* Modifiez les valeurs ci-dessous pour ajuster la position */
 
 .pos-mail {
-    right: 150px; /* Axe X */
+    right: 180px; /* Axe X */
     top: 25%;    /* Axe Y */
 }
 
 .pos-tel {
-    right: 150px; /* Axe X */
+    right: 180px; /* Axe X */
     top: 30%;    /* Axe Y */
 }
 
 .pos-insta {
-    right: 150px; /* Axe X */
+    right: 180px; /* Axe X */
     top: 35%;    /* Axe Y */
 }
 
