@@ -242,18 +242,27 @@ html, body {
 
 @media (max-width: 768px) {
     
+  .info-page .background-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden; /* Très important : cache les 2/3 qui dépassent */
+    }
+
     .info-page .background-image {
-        /* On réduit les dimensions à 80% de l'écran mobile */
-        width: 80vw; 
-        height: 80vh;
+        /* L'image fait 3 fois la largeur de l'écran */
+        width: 300vw; 
+        height: 100vh;
         
-        /* On s'assure que l'image ne se déforme pas */
+        /* On conserve les proportions sans étirer */
         object-fit: cover;
         
-        /* On force l'ancrage interne de la photo */
+        /* On cale l'image sur son bord gauche et son bord bas */
         object-position: left bottom;
 
-        /* Positionnement du bloc image en bas à gauche de l'écran */
+        /* Positionnement pour être sûr que le tiers gauche soit celui affiché */
         position: absolute;
         left: 0;
         bottom: 0;
