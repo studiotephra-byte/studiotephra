@@ -83,6 +83,7 @@ html, body {
     height: 100vh; /* Force l'image à ne pas dépasser la hauteur de l'écran */
     object-fit: cover; /* Recadre proprement sans déformer ni zoomer */
     display: block;
+    object-position: center; /* L'image restera centrée malgré le recadrage */
 }
 
 /* Animation du fondu */
