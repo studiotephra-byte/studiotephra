@@ -43,65 +43,70 @@ html, body {
 }
 
 /* --- 4. TEXTE CENTRAL (Studio Tephra) --- */
-/* --- CONFIGURATION TYPOGRAPHIQUE (3 LIGNES) --- */
 
 .center-content {
     z-index: 100;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    text-align: center; /* Centrage horizontal global */
+    width: 100%;
 }
 
-/* Bloc des deux premières lignes */
-.text-block {
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    line-height: 0.82; /* Rapproche "STUDIO" et "TEPHRA" */
-}
-
-/* LIGNE 1 : "STUDIO" (Moyenne) */
-.word-studio {
-    font-size: 36px;       /* Taille moyenne */
-    font-weight: 700;      /* Roboto Bold */
-    text-transform: uppercase;
-    letter-spacing: 0.1em; /* Léger espacement */
-}
-
-/* LIGNE 2 : "TEPHRA" (Massive) */
-.word-tephra {
-    font-size: 110px;      /* Taille massive */
-    font-weight: 900;      /* Roboto Black */
-    text-transform: uppercase;
-    letter-spacing: -0.01em; /* Légère compression pour l'impact */
-}
-
-/* LIGNE 3 : "ARCHITECTURE..." (Petite & Espacée) */
-.center-content .subtitle {
-    font-size: 16px;       /* Petite taille */
-    font-weight: 400;      /* Roboto Bold */
-    margin-top: 12px;      /* Espace entre TEPHRA et la description */
-    text-transform: uppercase;
-    letter-spacing: 0.18em; /* Fort espacement pour l'élégance architecturale */
-}
-
-/* On conserve le lien vers INFO */
+/* Lien invisible qui contient le nom */
 .title-link {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block; /* Pour que le lien épouse la forme du texte */
 }
 
-/* --- ADAPTATION MOBILE --- */
+/* Le bloc qui force l'alignement asymétrique */
+.header-box {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligne STUDIO sur le bord gauche de TEPHRA */
+    line-height: 0.82;       /* Espacement vertical serré */
+}
 
+/* --- 4b. DÉTAILS TYPOGRAPHIQUES --- */
+
+/* Ligne 1 : STUDIO */
+.word-studio {
+    font-size: 36px;
+    font-weight: 700;      /* Roboto Bold */
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+}
+
+/* Ligne 2 : TEPHRA */
+.word-tephra {
+    font-size: 110px;
+    font-weight: 900;      /* Roboto Black */
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+}
+
+/* Ligne 3 : DESCRIPTION (Centrée au milieu de l'écran) */
+.center-content .subtitle {
+    font-size: 16px;
+    font-weight: 400;      /* Roboto Regular */
+    margin-top: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 100%;           /* Assure le centrage par rapport à la page */
+}
+
+/* --- 4c. ADAPTATION MOBILE --- */
 @media (max-width: 768px) {
-    .word-studio { font-size: 24px; }
-    .word-tephra { font-size: 68px; }
+    .word-studio { 
+        font-size: 22px; 
+    }
+    .word-tephra { 
+        font-size: 64px; 
+    }
     .center-content .subtitle { 
-        font-size: 10px; 
-        margin-top: 10px;
-        letter-spacing: 0.1em;
+        font-size: 11px; 
+        margin-top: 15px;
+        letter-spacing: 0.12em;
     }
 }
 
