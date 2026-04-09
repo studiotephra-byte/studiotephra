@@ -1,114 +1,91 @@
-/* 1. Importation Roboto */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap');
+/* 1. Importation Roboto Black */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden; /* Stabilise le zoom */
+    margin: 0; padding: 0;
+    width: 100%; height: 100%;
+    overflow: hidden;
     background-color: #000;
+    font-family: 'Roboto', sans-serif;
 }
 
-/* 2. NAVIGATION COMMUNE & LANDING PAGE */
-.center-link {
-    position: fixed;
-    top: 15%; bottom: 15%; left: 15%; right: 15%;
-    z-index: 500;
-    cursor: pointer;
-    background: transparent;
-    display: block;
-}
-
-.fixed-instagram, .fixed-email {
-    position: fixed;
-    z-index: 1000;
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-size: 0.95rem;
-    letter-spacing: 0.2em;
-    text-transform: lowercase;
-}
-
-/* Positionnement vertical (Axe Y) pour les boutons du bas */
-.fixed-instagram, .fixed-email { bottom: 10px; } 
-
-/* Positionnement horizontal (Axe X) */
-.fixed-instagram { left: 30px; }
-.fixed-email { right: 30px; }
-
-.fixed-instagram a, .fixed-email a {
-    display: inline-block;
-    color: transparent !important;
-    padding: 20px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* 3. DIAPORAMA (Landing page) */
+/* 2. Diaporama */
 .slideshow {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100vh;
-    z-index: 10;
+    position: relative;
+    width: 100%; height: 100vh;
 }
 
 .slide {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100vh;
-    object-fit: cover;
     opacity: 0;
-    animation: fadeAnimation 32s infinite;
+    animation: fadeAnimation 32s infinite; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* 4. PAGE INFO (Fond & Image) */
-.background-container {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100vh;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.background-image {
-    width: 100%;
-    height: 100%;
+.slide img {
+    position: absolute;
+    width: 100%; height: 100%;
     object-fit: cover;
-    display: block;
-    object-position: center;
+    z-index: -1;
 }
 
-/* 5. CONTACT SIDEBAR (Réglages individuels X et Y) */
-.contact-sidebar-custom a {
-    position: fixed;
-    z-index: 1001;
-    color: transparent !important;
+/* 3. Typographies (Roboto Black) */
+.center-content {
+    text-align: center;
+    z-index: 100;
+}
+
+.center-content h1 {
+    font-size: 74px;
+    font-weight: 900;
+    margin: 0;
+}
+
+.center-content p {
+    font-size: 24px;
+    font-weight: 900;
+    margin-top: 10px;
+}
+
+.footer-links a {
+    position: absolute;
+    bottom: 30px;
+    font-size: 20px;
+    font-weight: 900;
     text-decoration: none;
-    cursor: pointer;
-    padding: 10px; /* Taille de la zone de clic */
 }
 
-/* Modifiez les valeurs ci-dessous pour ajuster la position */
+.foot-left { left: 30px; }
+.foot-right { right: 30px; }
 
-.pos-mail {
-    right: 180px; /* Axe X */
-    top: 25%;    /* Axe Y */
-}
+/* 4. CONFIGURATION DES COULEURS (PRÉCISION PAR SLIDE) */
 
-.pos-tel {
-    right: 180px; /* Axe X */
-    top: 30%;    /* Axe Y */
-}
+/* Slides Tout Blanc : S2, S3, S8 */
+.s2, .s3, .s8 { color: #FFFFFF; }
+.s2 a, .s3 a, .s8 a { color: #FFFFFF; }
 
-.pos-insta {
-    right: 180px; /* Axe X */
-    top: 35%;    /* Axe Y */
-}
+/* Slides Centre Noir / Bas Blanc : S1, S5, S6 */
+.s1 .center-content, .s5 .center-content, .s6 .center-content { color: #000000; }
+.s1 .footer-links a, .s5 .footer-links a, .s6 .footer-links a { color: #FFFFFF; }
 
-/* 6. ANIMATIONS */
+/* Slide S4 : Centre Blanc / Bas Noir */
+.s4 .center-content { color: #FFFFFF; }
+.s4 .footer-links a { color: #000000; }
+
+/* Slide S7 : Centre Blanc / Gauche Noir / Droite Blanc */
+.s7 .center-content { color: #FFFFFF; }
+.s7 .foot-left { color: #000000; }
+.s7 .foot-right { color: #FFFFFF; }
+
+/* 5. ANIMATION */
 @keyframes fadeAnimation {
     0% { opacity: 0; }
-    5% { opacity: 1; }
+    3% { opacity: 1; }
     12.5% { opacity: 1; }
-    17.5% { opacity: 0; }
+    15.5% { opacity: 0; }
     100% { opacity: 0; }
 }
 
