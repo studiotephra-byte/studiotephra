@@ -1,94 +1,116 @@
-/* 1. Importation Roboto Black */
+/* --- 1. IMPORTATION POLICE --- */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap');
 
+/* --- 2. RESET & STABILISATION --- */
 html, body {
-    margin: 0; padding: 0;
-    width: 100%; height: 100%;
-    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Empêche le scroll */
     background-color: #000;
     font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased; /* Lissage police pour Mac */
 }
 
-/* 2. Diaporama */
+/* --- 3. STRUCTURE DIAPORAMA --- */
 .slideshow {
     position: relative;
-    width: 100%; height: 100vh;
+    width: 100%;
+    height: 100vh;
 }
 
 .slide {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100vh;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     opacity: 0;
     animation: fadeAnimation 32s infinite; 
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .slide img {
     position: absolute;
-    width: 100%; height: 100%;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: -1;
 }
 
-/* 3. Typographies (Roboto Black) */
+/* --- 4. TEXTE CENTRAL (Studio Tephra) --- */
 .center-content {
-    text-align: center;
     z-index: 100;
+}
+
+.title-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* Supprime le flash bleu sur mobile */
 }
 
 .center-content h1 {
     font-size: 74px;
     font-weight: 900;
     margin: 0;
+    letter-spacing: -0.01em;
 }
 
 .center-content p {
     font-size: 24px;
     font-weight: 900;
     margin-top: 10px;
+    letter-spacing: 0.05em;
 }
 
+/* --- 5. FOOTER (Instagram & Mail) --- */
 .footer-links a {
     position: absolute;
     bottom: 30px;
     font-size: 20px;
     font-weight: 900;
     text-decoration: none;
+    z-index: 100;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .foot-left { left: 30px; }
 .foot-right { right: 30px; }
 
-/* 4. CONFIGURATION DES COULEURS (PRÉCISION PAR SLIDE) */
+/* --- 6. LOGIQUE DES COULEURS (Axe de personnalisation) --- */
 
-/* Slides Tout Blanc : S2, S3, S8 */
-.s2, .s3, .s8 { color: #FFFFFF; }
+/* Cas : TOUT BLANC (S2, S3, S8) */
+.s2, .s3, .s8, 
 .s2 a, .s3 a, .s8 a { color: #FFFFFF; }
 
-/* Slides Centre Noir / Bas Blanc : S1, S5, S6 */
+/* Cas : CENTRE NOIR / BAS BLANC (S1, S5, S6) */
 .s1 .center-content, .s5 .center-content, .s6 .center-content { color: #000000; }
 .s1 .footer-links a, .s5 .footer-links a, .s6 .footer-links a { color: #FFFFFF; }
 
-/* Slide S4 : Centre Blanc / Bas Noir */
+/* Cas : CENTRE BLANC / BAS NOIR (S4) */
 .s4 .center-content { color: #FFFFFF; }
 .s4 .footer-links a { color: #000000; }
 
-/* Slide S7 : Centre Blanc / Gauche Noir / Droite Blanc */
+/* Cas : CENTRE BLANC / GAUCHE NOIR / DROITE BLANC (S7) */
 .s7 .center-content { color: #FFFFFF; }
 .s7 .foot-left { color: #000000; }
 .s7 .foot-right { color: #FFFFFF; }
 
-/* 5. ANIMATION */
+/* --- 7. ANIMATION (Transition douce) --- */
 @keyframes fadeAnimation {
     0% { opacity: 0; }
-    3% { opacity: 1; }
-    12.5% { opacity: 1; }
-    15.5% { opacity: 0; }
+    2% { opacity: 1; }  /* Apparition rapide */
+    12.5% { opacity: 1; } /* Maintien de l'image */
+    14.5% { opacity: 0; } /* Disparition */
     100% { opacity: 0; }
 }
 
+/* Délais (photo1.jpg à photo8.jpg) */
 .slide:nth-child(1) { animation-delay: 0s; }
 .slide:nth-child(2) { animation-delay: 4s; }
 .slide:nth-child(3) { animation-delay: 8s; }
@@ -97,3 +119,17 @@ html, body {
 .slide:nth-child(6) { animation-delay: 20s; }
 .slide:nth-child(7) { animation-delay: 24s; }
 .slide:nth-child(8) { animation-delay: 28s; }
+
+/* --- 8. ADAPTATION MOBILE --- */
+@media (max-width: 768px) {
+    .center-content h1 { font-size: 44px; }
+    .center-content p { font-size: 16px; margin-top: 5px; }
+    
+    .footer-links a { 
+        font-size: 15px; 
+        bottom: 25px; 
+    }
+    
+    .foot-left { left: 20px; }
+    .foot-right { right: 20px; }
+}
