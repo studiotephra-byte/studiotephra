@@ -6,28 +6,28 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Empêche tout défilement et stabilise le zoom */
     background-color: #000;
 }
 
-
-/* Zone cliquable centrale pour info.html */
+/* 2. ZONE CENTRALE CLIQUABLE (Correction du zoom) */
 .center-link {
     position: fixed;
-    top: 40%;    /* Laisse l'espace libre en haut */
-    bottom: 40%; /* Protège les liens Instagram/Email en bas */
-    left: 40%;
-    right: 40%;
-    z-index: 500; /* Priorité moyenne : au-dessus des images, sous les liens de contact */
+    top: 15%;    
+    bottom: 15%; 
+    left: 15%;   
+    right: 15%;  
+    z-index: 500; 
     cursor: pointer;
     background: transparent;
-    
-/* 2. Zones interactives (Bas Gauche et Bas Droite) */    
+    display: block; /* Assure que le lien occupe bien l'espace */
+}
+
+/* 3. ZONES FIXES (Instagram & Email) */
 .fixed-instagram, .fixed-email {
     position: fixed;
     bottom: 30px;
     z-index: 1000;
-    
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 0.95rem;
@@ -35,37 +35,25 @@ html, body {
     text-transform: lowercase;
 }
 
-.fixed-instagram {
-    left: 30px; /* Position Instagram */
-}
+.fixed-instagram { left: 30px; }
+.fixed-email { right: 30px; }
 
-.fixed-email {
-    right: 30px; /* Position Email */
-}
-
-/* 3. Liens invisibles mais cliquables */
 .fixed-instagram a, .fixed-email a {
     display: inline-block;
-    text-decoration: none !important;
-    
-    /* RENDRE LE TEXTE TOTALEMENT INCRUSTÉ (INVISIBLE) */
-    color: transparent !important; 
-    
-    /* Zone de clic confortable (40px de haut/large minimum autour du lien) */
-    padding: 20px; 
+    color: transparent !important; /* Reste incrusté/invisible */
+    padding: 20px;
+    text-decoration: none;
     cursor: pointer;
-    
-    /* Optionnel : transition si vous décidez de remettre une opacité au hover plus tard */
-    transition: opacity 0.3s ease;
 }
 
-/* --- DIAPORAMA (Lien avec le dossier /images) --- */
+/* 4. DIAPORAMA (Correction de l'affichage) */
 .slideshow {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
+    z-index: 10; /* Sous le lien central */
 }
 
 .slide {
@@ -73,12 +61,13 @@ html, body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: 100vh; /* Force la hauteur à 100% de l'écran pour éviter le zoom */
+    object-fit: cover; /* Recadre l'image proprement sans déformer */
     opacity: 0;
     animation: fadeAnimation 32s infinite;
 }
 
+/* Animation du fondu */
 @keyframes fadeAnimation {
     0% { opacity: 0; }
     5% { opacity: 1; }
@@ -87,7 +76,7 @@ html, body {
     100% { opacity: 0; }
 }
 
-/* Décalages d'animation pour 8 images */
+/* Décalages pour 8 images */
 .slide:nth-child(1) { animation-delay: 0s; }
 .slide:nth-child(2) { animation-delay: 4s; }
 .slide:nth-child(3) { animation-delay: 8s; }
