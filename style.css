@@ -83,7 +83,7 @@ html, body {
     color: transparent !important;
     text-decoration: none;
     cursor: pointer;
-    padding: 20px; /* Taille de la zone de clic */
+    padding: 10px; /* Taille de la zone de clic */
 }
 
 /* Modifiez les valeurs ci-dessous pour ajuster la position */
