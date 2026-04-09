@@ -85,6 +85,62 @@ html, body {
     display: block;
     object-position: center; /* L'image restera centrée malgré le recadrage */
 }
+/* --- PAGE INFO : NAVIGATION --- */
+
+/* 1. Les 3 boutons de contact (Centrés à droite) */
+.contact-sidebar-center {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espace entre mail, tel et insta */
+    z-index: 1000;
+}
+
+.contact-sidebar-center a {
+    display: block;
+    padding: 20px 30px;
+    color: transparent !important;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 2. Le bouton retour (Bas droite) */
+/* On utilise la classe .fixed-email que vous avez déjà pour index.html */
+.fixed-email {
+    position: fixed;
+    bottom: 15px; /* Aligné sur votre demande de baisser la hauteur */
+    right: 30px;
+    z-index: 1000;
+}
+
+.fixed-email a {
+    display: inline-block;
+    padding: 20px;
+    color: transparent !important;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 3. Stabilisation du fond info */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
 
 /* Animation du fondu */
 @keyframes fadeAnimation {
