@@ -89,18 +89,18 @@ html, body {
 /* Modifiez les valeurs ci-dessous pour ajuster la position */
 
 .pos-mail {
-    right: 20px; /* Axe X */
-    top: 40%;    /* Axe Y */
+    right: 100px; /* Axe X */
+    top: 20%;    /* Axe Y */
 }
 
 .pos-tel {
-    right: 20px; /* Axe X */
-    top: 50%;    /* Axe Y */
+    right: 100px; /* Axe X */
+    top: 30%;    /* Axe Y */
 }
 
 .pos-insta {
-    right: 20px; /* Axe X */
-    top: 60%;    /* Axe Y */
+    right: 100px; /* Axe X */
+    top: 40%;    /* Axe Y */
 }
 
 /* 6. ANIMATIONS */
