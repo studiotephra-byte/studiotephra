@@ -236,16 +236,24 @@ html, body {
     text-decoration: none;
     color: #000000;
 }
+/* --- Tout en bas de votre fichier style.css --- */
 
-/* --- ADAPTATION MOBILE --- */
 @media (max-width: 768px) {
+    
+    /* C'est ici qu'on insère l'ancrage de la photo */
+    .info-page .background-image {
+        object-position: left bottom !important; 
+        object-fit: cover;
+    }
+
+    /* Vos autres réglages mobiles déjà existants (tailles de texte, etc.) */
     .contact-header {
         top: 25px;
-        gap: 25px;          /* Plus serré sur mobile pour tenir en largeur */
+        gap: 20px;
     }
 
     .contact-header a, 
     .fixed-back a {
-        font-size: 15px;    /* Texte plus petit pour éviter de déborder */
+        font-size: 15px;
     }
 }
