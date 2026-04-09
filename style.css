@@ -126,7 +126,7 @@ html, body {
     .center-content p { font-size: 16px; margin-top: 5px; }
     
     .footer-links a { 
-        font-size: 15px; 
+        font-size: 10px; 
         bottom: 25px; 
     }
     
@@ -160,15 +160,15 @@ html, body {
     left: 50%;              /* Placement au milieu de l'écran */
     transform: translateX(-50%); /* Décalage vers la gauche de la moitié de sa propre largeur */
     display: flex;
-    gap: 50px;              /* Espace horizontal entre les éléments */
+    gap: 120px;              /* Espace horizontal entre les éléments */
     white-space: nowrap;    /* Empêche les mots de passer à la ligne */
     z-index: 1000;
 }
 
 .contact-header a {
     font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    font-size: 20px;
+    font-weight: 250;
+    font-size: 10px;
     text-decoration: none;
     text-transform: lowercase;
     color: #000000;
@@ -189,8 +189,8 @@ html, body {
 
 .fixed-back a {
     font-family: 'Roboto', sans-serif;
-    font-weight: 900;
-    font-size: 20px;
+    font-weight: 250;
+    font-size: 10px;
     text-decoration: none;
     color: #000000;
 }
@@ -204,6 +204,6 @@ html, body {
 
     .contact-header a, 
     .fixed-back a {
-        font-size: 15px;    /* Texte plus petit pour éviter de déborder */
+        font-size: 10px;    /* Texte plus petit pour éviter de déborder */
     }
 }
