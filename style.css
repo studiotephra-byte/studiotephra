@@ -14,10 +14,10 @@ html, body {
 /* Zone cliquable centrale pour info.html */
 .center-link {
     position: fixed;
-    top: 20%;    /* Laisse l'espace libre en haut */
-    bottom: 20%; /* Protège les liens Instagram/Email en bas */
-    left: 20%;
-    right: 20%;
+    top: 40%;    /* Laisse l'espace libre en haut */
+    bottom: 40%; /* Protège les liens Instagram/Email en bas */
+    left: 40%;
+    right: 40%;
     z-index: 500; /* Priorité moyenne : au-dessus des images, sous les liens de contact */
     cursor: pointer;
     background: transparent;
