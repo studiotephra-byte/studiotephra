@@ -253,7 +253,7 @@ html, body {
 
     .info-page .background-image {
         /* L'image fait 3 fois la largeur de l'écran */
-        width: 300vw; 
+        width: 200vw; 
         height: 100vh;
         
         /* On conserve les proportions sans étirer */
