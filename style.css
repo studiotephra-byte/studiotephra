@@ -7,13 +7,13 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* Empêche le scroll */
+    overflow: hidden; 
     background-color: #000;
     font-family: 'Roboto', sans-serif;
-    -webkit-font-smoothing: antialiased; /* Lissage police pour Mac */
+    -webkit-font-smoothing: antialiased;
 }
 
-/* --- 3. STRUCTURE DIAPORAMA --- */
+/* --- 3. STRUCTURE DIAPORAMA (Page Accueil) --- */
 .slideshow {
     position: relative;
     width: 100%;
@@ -43,74 +43,51 @@ html, body {
 }
 
 /* --- 4. TEXTE CENTRAL (Studio Tephra) --- */
-
 .center-content {
     z-index: 100;
-    text-align: center; /* Centrage horizontal global */
+    text-align: center;
     width: 100%;
 }
 
-/* Lien invisible qui contient le nom */
 .title-link {
     text-decoration: none;
     color: inherit;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
-    display: inline-block; /* Pour que le lien épouse la forme du texte */
+    display: inline-block;
 }
 
-/* Le bloc qui force l'alignement asymétrique */
 .header-box {
     display: inline-flex;
     flex-direction: column;
-    align-items: flex-start; /* Aligne STUDIO sur le bord gauche de TEPHRA */
-    line-height: 0.82;       /* Espacement vertical serré */
+    align-items: flex-start; 
+    line-height: 0.82;
 }
 
-/* --- 4b. DÉTAILS TYPOGRAPHIQUES --- */
-
-/* Ligne 1 : STUDIO */
 .word-studio {
     font-size: 36px;
-    font-weight: 700;      /* Roboto Bold */
+    font-weight: 700; /* Bold */
     text-transform: uppercase;
     letter-spacing: 0.12em;
 }
 
-/* Ligne 2 : TEPHRA */
 .word-tephra {
     font-size: 110px;
-    font-weight: 900;      /* Roboto Black */
+    font-weight: 900; /* Black */
     text-transform: uppercase;
     letter-spacing: -0.01em;
 }
 
-/* Ligne 3 : DESCRIPTION (Centrée au milieu de l'écran) */
-.center-content .subtitle {
+.subtitle {
     font-size: 16px;
-    font-weight: 400;      /* Roboto Regular */
+    font-weight: 400; /* Regular */
     margin-top: 22px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
-    width: 100%;           /* Assure le centrage par rapport à la page */
+    width: 100%;
 }
 
-/* --- 4c. ADAPTATION MOBILE --- */
-@media (max-width: 768px) {
-    .word-studio { 
-        font-size: 22px; 
-    }
-    .word-tephra { 
-        font-size: 64px; 
-    }
-    .center-content .subtitle { 
-        font-size: 11px; 
-        margin-top: 15px;
-        letter-spacing: 0.12em;
-    }
-}
-
-/* --- 5. FOOTER (Instagram & Mail) --- */
+/* --- 5. FOOTER ACCUEIL --- */
 .footer-links a {
     position: absolute;
     bottom: 30px;
@@ -118,41 +95,30 @@ html, body {
     font-weight: 400;
     text-decoration: none;
     z-index: 100;
-    -webkit-tap-highlight-color: transparent;
 }
 
 .foot-left { left: 30px; }
 .foot-right { right: 30px; }
 
-/* --- 6. LOGIQUE DES COULEURS (Axe de personnalisation) --- */
-
-/* Cas : TOUT BLANC (S2, S3, S8) */
-.s2, .s3, .s8, 
-.s2 a, .s3 a, .s8 a { color: #FFFFFF; }
-
-/* Cas : CENTRE NOIR / BAS BLANC (S1, S5, S6) */
+/* --- 6. LOGIQUE DES COULEURS (Diaporama) --- */
+.s2, .s3, .s8, .s2 a, .s3 a, .s8 a { color: #FFFFFF; }
 .s1 .center-content, .s5 .center-content, .s6 .center-content { color: #000000; }
 .s1 .footer-links a, .s5 .footer-links a, .s6 .footer-links a { color: #FFFFFF; }
-
-/* Cas : CENTRE BLANC / BAS NOIR (S4) */
 .s4 .center-content { color: #FFFFFF; }
 .s4 .footer-links a { color: #000000; }
-
-/* Cas : CENTRE BLANC / GAUCHE NOIR / DROITE BLANC (S7) */
 .s7 .center-content { color: #FFFFFF; }
 .s7 .foot-left { color: #000000; }
 .s7 .foot-right { color: #FFFFFF; }
 
-/* --- 7. ANIMATION (Transition douce) --- */
+/* --- 7. ANIMATION --- */
 @keyframes fadeAnimation {
     0% { opacity: 0; }
-    2% { opacity: 1; }  /* Apparition rapide */
-    12.5% { opacity: 1; } /* Maintien de l'image */
-    14.5% { opacity: 0; } /* Disparition */
+    2% { opacity: 1; }
+    12.5% { opacity: 1; }
+    14.5% { opacity: 0; }
     100% { opacity: 0; }
 }
 
-/* Délais (photo1.jpg à photo8.jpg) */
 .slide:nth-child(1) { animation-delay: 0s; }
 .slide:nth-child(2) { animation-delay: 4s; }
 .slide:nth-child(3) { animation-delay: 8s; }
@@ -162,23 +128,8 @@ html, body {
 .slide:nth-child(7) { animation-delay: 24s; }
 .slide:nth-child(8) { animation-delay: 28s; }
 
-/* --- 8. ADAPTATION MOBILE --- */
-@media (max-width: 768px) {
-    .center-content h1 { font-size: 44px; }
-    .center-content p { font-size: 16px; margin-top: 5px; }
-    
-    .footer-links a { 
-        font-size: 15px; 
-        bottom: 25px; 
-    }
-    
-    .foot-left { left: 20px; }
-    .foot-right { right: 20px; }
-}
+/* --- 8. CONFIGURATION PAGE INFO --- */
 
-/* --- CONFIGURATION PAGE INFO --- */
-
-/* Fond stabilisé */
 .info-page .background-container {
     position: fixed;
     top: 0;
@@ -192,79 +143,10 @@ html, body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
-/* --- NAVIGATION HAUTE CENTRÉE --- */
-
-.contact-header {
-    position: fixed;
-    top: 30px;              /* Distance du haut */
-    left: 50%;              /* Placement au milieu de l'écran */
-    transform: translateX(-50%); /* Décalage vers la gauche de la moitié de sa propre largeur */
-    display: flex;
-    gap: 400px;              /* Espace horizontal entre les éléments */
-    white-space: nowrap;    /* Empêche les mots de passer à la ligne */
-    z-index: 1000;
-}
-
-.contact-header a {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    text-decoration: none;
-    text-transform: lowercase;
-    color: #000000;
-    transition: opacity 0.3s;
-}
-
-.contact-header a:hover {
-    opacity: 0.6;
-}
-
-/* --- BOUTON RETOUR (Reste en bas à droite) --- */
-.fixed-back {
-    position: centered;
-    bottom: 30px;
-    z-index: 1000;
-    color: #FFFFFF;
-}
-
-.fixed-back a {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 15px;
-    text-decoration: none;
-    color: #000000;
-}
-/* --- Tout en bas de votre fichier style.css --- */
-
-    
-/* --- ADAPTATION MOBILE (< 768px) --- */
-@media (max-width: 768px) {
-    .info-page .background-image {
-        /* On s'assure que sur mobile l'image occupe bien 100% */
-        width: 100vw;
-        height: 100vh;
-        object-fit: cover;
-        object-position: center !important;
-    }
-
-    /* Vos autres réglages mobiles déjà existants (tailles de texte, etc.) */
-    .contact-header {
-        top: 25px;
-        gap: 20px;
-    }
-
-    .contact-header a, 
-    .fixed-back a {
-        font-size: 15px;
-    }
-}
-
-
-
-
-/* --- SÉLECTEUR DE LANGUE --- */
+/* Sélecteur de langue */
 .language-selector {
     position: fixed;
     top: 40px;
@@ -273,7 +155,7 @@ html, body {
     display: flex;
     justify-content: center;
     gap: 30px;
-    z-index: 100;
+    z-index: 1000;
 }
 
 .lang-btn {
@@ -285,46 +167,72 @@ html, body {
     font-size: 16px;
     cursor: pointer;
     text-transform: uppercase;
-    opacity: 0.4; /* Inactif par défaut */
+    opacity: 0.4;
     transition: opacity 0.3s;
 }
 
 .lang-btn.active {
-    opacity: 1; /* Actif */
+    opacity: 1;
     font-weight: 700;
 }
 
-/* --- GESTION DES TEXTES --- */
+/* Zone de texte défilante */
 .scroll-container {
     position: fixed;
-    top: 100px;
+    top: 120px;
     bottom: 80px;
     width: 100%;
     overflow-y: auto;
     z-index: 10;
     padding: 0 20px;
-    scrollbar-width: none;
+    scrollbar-width: none; /* Firefox */
 }
 
+.scroll-container::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
 .lang-content {
-    display: none; /* Caché par défaut */
+    display: none;
     max-width: 800px;
     margin: 0 auto;
     color: #000;
 }
 
-.lang-content.active {
-    display: block; /* Affiché si actif */
-}
+.lang-content.active { display: block; }
 
-/* Typographie identique à vos slides */
 .lang-content h2 { font-weight: 900; font-size: 40px; margin-bottom: 20px; }
 .lang-content h3 { font-weight: 700; font-size: 20px; margin-top: 30px; }
 .lang-content p { font-weight: 400; line-height: 1.6; margin-bottom: 15px; }
 
-/* --- MOBILE --- */
+/* Bouton Retour */
+.fixed-back {
+    position: fixed;
+    bottom: 30px;
+    right: 30px; /* Aligné à droite comme sur l'accueil */
+    z-index: 1000;
+}
+
+.fixed-back a {
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000;
+}
+
+/* --- 9. ADAPTATION MOBILE (Unique section Media) --- */
 @media (max-width: 768px) {
+    /* Accueil */
+    .word-studio { font-size: 22px; }
+    .word-tephra { font-size: 64px; }
+    .subtitle { font-size: 11px; margin-top: 15px; letter-spacing: 0.12em; }
+    
+    .foot-left { left: 20px; }
+    .foot-right { right: 20px; }
+
+    /* Page Info */
     .language-selector { top: 25px; gap: 20px; }
     .lang-btn { font-size: 14px; }
+    .scroll-container { top: 80px; }
     .lang-content h2 { font-size: 30px; }
+    
+    .fixed-back { right: 20px; bottom: 25px; }
 }
