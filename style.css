@@ -264,21 +264,29 @@ html, body {
     /* --- Page Info (Effet Sandwich PNG) --- */
     
     /* 1. L'image PNG passe au PREMIER PLAN (Couche 20) */
-    .info-page .background-container {
-        z-index: 20; 
-        pointer-events: none; /* Permet de toucher le texte à travers l'image */
-        background-color: transparent !important; /* L'image est transparente, le blanc est derrière */
-    }
+.info-page .background-container {
+    position: fixed; /* Important pour le mouvement via JS */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 20; 
+    pointer-events: none;
+    will-change: transform; /* Optimise la fluidité du mouvement */
+}
 
-    /* 2. Le texte passe DERRIÈRE l'image (Couche 10) */
-    .scroll-container { 
-        top: 80px; 
-        bottom: 80px; 
-        justify-content: center; 
-        padding: 0 25px;
-        z-index: 10;
-        background: transparent;
-    }
+.scroll-container { 
+    position: fixed;
+    top: 80px; 
+    bottom: 80px; 
+    width: 100%;
+    justify-content: center; 
+    padding: 0 25px;
+    z-index: 10;
+    overflow-y: auto; /* Le scroll se passe ici */
+    -webkit-overflow-scrolling: touch;
+}
+    
 
     .lang-content { 
         max-width: 100%; 
