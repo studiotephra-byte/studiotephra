@@ -80,20 +80,29 @@
         <a href="index.html">retour / back / por atras</a>
     </div>
 
-    <script>
-        function showLang(lang) {
-            // Masquer tous les textes
-            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
-            // Désactiver tous les boutons
-            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-            
-            // Afficher le texte choisi et activer son bouton
-            document.getElementById('lang-' + lang).classList.add('active');
-            document.getElementById('btn-' + lang).classList.add('active');
-            
-            // Remonter le scroll en haut à chaque changement
-            document.querySelector('.scroll-container').scrollTop = 0;
-        }
-    </script>
+   <script>
+    const scrollContainer = document.querySelector('.scroll-container');
+    const bgContainer = document.querySelector('.background-container');
+
+    scrollContainer.addEventListener('scroll', () => {
+        // On récupère la valeur du scroll (nombre de pixels descendus)
+        let scrollValue = scrollContainer.scrollTop;
+        
+        // On déplace l'image vers le bas d'une valeur égale au scroll
+        // L'image descend alors que le texte monte
+        bgContainer.style.transform = `translateY(${scrollValue}px)`;
+    });
+
+    // On réinitialise la position si l'utilisateur change de langue
+    function showLang(lang) {
+        document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('lang-' + lang).classList.add('active');
+        document.getElementById('btn-' + lang).classList.add('active');
+        
+        scrollContainer.scrollTop = 0;
+        bgContainer.style.transform = `translateY(0px)`;
+    }
+</script>
 </body>
 </html>
