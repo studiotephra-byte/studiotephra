@@ -130,6 +130,10 @@ html, body {
 
 /* --- 8. CONFIGURATION PAGE INFO --- */
 
+.info-page {
+    background-color: #FFFFFF !important;
+}
+
 .info-page .background-container {
     position: fixed;
     top: 0;
@@ -179,6 +183,7 @@ html, body {
 /* Zone de texte défilante */
 /* --- GESTION DES TEXTES (Page Info) --- */
 .scroll-container {
+    background: transparent;
     position: fixed;
     top: 120px;
     bottom: 80px;
