@@ -189,6 +189,12 @@ html, body {
     bottom: 80px;
     width: 100%;
     overflow-y: auto;
+    overflow-x: hidden; /* Empêche tout débordement horizontal */
+        
+        /* Correction de l'affichage du texte */
+    display: block; /* On repasse en block pour le flux naturel du texte */
+    padding: 0 25px;
+    box-sizing: border-box; /* Important pour que le padding soit inclus dans la largeur */
     z-index: 10;
     padding: 0 20px;
     scrollbar-width: none;
@@ -205,8 +211,9 @@ html, body {
     width: 100%;
     /* On limite la largeur à la moitié de l'écran */
     max-width: 50vw; 
-    /* Marge à droite pour ne pas coller au bord de la fenêtre */
-    margin-right: 5%; 
+margin: 0;
+    word-wrap: break-word; /* Force la coupure des mots trop longs */
+    text-align: left; /* Ou center selon ta préférence esthétique */
     color: #000;
 }
 
