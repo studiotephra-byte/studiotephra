@@ -252,15 +252,21 @@ html, body {
     .foot-left { left: 20px; }
     .foot-right { right: 20px; }
 
-    /* --- Page Info --- */
-    .language-selector { top: 25px; gap: 20px; }
-    .lang-btn { font-size: 14px; }
+    /* --- Page Info (Effet Sandwich PNG) --- */
     
+    /* 1. L'image PNG passe au PREMIER PLAN (Couche 20) */
+    .info-page .background-container {
+        z-index: 20; 
+        pointer-events: none; /* Indispensable pour scroller le texte derrière */
+    }
+
+    /* 2. Le texte passe DERRIÈRE l'image (Couche 10) */
     .scroll-container { 
         top: 80px; 
-        bottom: 80px; /* Espace pour ne pas chevaucher le bouton retour au scroll */
+        bottom: 80px; 
         justify-content: center; 
         padding: 0 25px;
+        z-index: 10;
     }
 
     .lang-content { 
@@ -270,11 +276,20 @@ html, body {
 
     .lang-content h2 { font-size: 30px; }
     
-    /* Bouton retour : la référence de hauteur */
+    /* 3. L'interface (Langues et Retour) doit rester au-dessus du PNG (Couche 30) */
+    .language-selector, 
     .fixed-back { 
+        z-index: 30; 
         right: 20px; 
         bottom: 25px; 
     }
+
+    .language-selector {
+        top: 25px;
+        gap: 20px;
+    }
+
+    .lang-btn { font-size: 14px; }
 
     .info-page .background-image {
         width: 100vw;
