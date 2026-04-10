@@ -8,23 +8,64 @@
 </head>
 <body class="info-page">
 
- <div class="background-container">
-    <picture>
-        <source srcset="images/informationtephra9-desktop.jpg" media="(min-width: 769px)">
+<body class="info-page">
+
+    <div class="background-container">
+        <picture>
+            <source srcset="images/photo_info_desktop.jpg" media="(min-width: 769px)">
+            <img src="images/photo_info_mobile.jpg" alt="Studio Tephra Info" class="background-image">
+        </picture>
+    </div>
+
+    <div class="language-selector">
+        <button onclick="showLang('fr')" id="btn-fr" class="lang-btn active">FR</button>
+        <button onclick="showLang('en')" id="btn-en" class="lang-btn">EN</button>
+        <button onclick="showLang('es')" id="btn-es" class="lang-btn">ES</button>
+    </div>
+
+    <div class="scroll-container">
         
-        <img src="images/informationtephra9-mobile.jpg" alt="Info Studio Tephra" class="background-image">
-    </picture>
-</div>
-    
-<div class="contact-header">
-        <a href="mailto:studio.tephra@gmail.com" class="pos-mail">mail</a>
-        <a href="https://wa.me/33634609536" target="_blank" class="pos-tel">telephone</a>
-        <a href="https://www.instagram.com/studiotephra/" target="_blank" class="pos-insta">instagram</a>
+        <div id="lang-fr" class="lang-content active">
+            <h2>TEPHRA</h2>
+            <p>L’équipe TEPHRA s’est construite au gré des rencontres...</p>
+            <h3>MEMBRES</h3>
+            <p><strong>Fabrice Henry</strong>, Architecte, Bijoutier...</p>
+            <p><strong>Mathieu Nouhen</strong>, Architecte, Artiste plasticien...</p>
+            <p><strong>Quentin Jousselme</strong>, Architecte, Musicien...</p>
+        </div>
+
+        <div id="lang-en" class="lang-content">
+            <h2>TEPHRA</h2>
+            <p>The TEPHRA team was built through various encounters...</p>
+            <h3>MEMBERS</h3>
+            <p><strong>Fabrice Henry</strong>, Architect, Jeweler...</p>
+            </div>
+
+        <div id="lang-es" class="lang-content">
+            <h2>TEPHRA</h2>
+            <p>El equipo TEPHRA se construyó a lo largo de los encuentros...</p>
+            <h3>MIEMBROS</h3>
+            </div>
+
     </div>
 
     <div class="fixed-back">
-        <a href="index.html">retour / back / por atras</a>
+        <a href="index.html">retour</a>
     </div>
 
+    <script>
+        function showLang(lang) {
+            // Masquer tous les textes
+            document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+            // Désactiver tous les boutons
+            document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+            
+            // Afficher le texte choisi et activer son bouton
+            document.getElementById('lang-' + lang).classList.add('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+            
+            // Remonter le scroll en haut à chaque changement
+            document.querySelector('.scroll-container').scrollTop = 0;
+        }
+    </script>
 </body>
-</html>
