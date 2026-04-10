@@ -177,24 +177,36 @@ html, body {
 }
 
 /* Zone de texte défilante */
+/* --- GESTION DES TEXTES (Page Info) --- */
 .scroll-container {
     position: fixed;
     top: 120px;
-    bottom: 200px;
+    bottom: 80px;
     width: 100%;
     overflow-y: auto;
     z-index: 10;
     padding: 0 20px;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
+    
+    /* On utilise flexbox pour gérer l'alignement global */
+    display: flex;
+    justify-content: flex-end; /* Aligne le contenu à droite sur desktop */
 }
 
-.scroll-container::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+.scroll-container::-webkit-scrollbar { display: none; }
 
 .lang-content {
     display: none;
-    max-width: 800px;
-    margin: 0 auto;
+    width: 100%;
+    /* On limite la largeur à la moitié de l'écran */
+    max-width: 50vw; 
+    /* Marge à droite pour ne pas coller au bord de la fenêtre */
+    margin-right: 5%; 
     color: #000;
+}
+
+.lang-content.active { 
+    display: block; 
 }
 
 .lang-content.active { display: block; }
@@ -218,7 +230,7 @@ html, body {
     color: #000;
 }
 
-/* --- 9. ADAPTATION MOBILE (Unique section Media) --- */
+/* --- 9. ADAPTATION MOBILE (< 768px) --- */
 @media (max-width: 768px) {
     /* Accueil */
     .word-studio { font-size: 22px; }
@@ -231,8 +243,26 @@ html, body {
     /* Page Info */
     .language-selector { top: 25px; gap: 20px; }
     .lang-btn { font-size: 14px; }
-    .scroll-container { top: 80px; }
+    
+    .scroll-container { 
+        top: 80px; 
+        justify-content: center; /* Recentrage du texte sur mobile */
+        padding: 0 25px;
+    }
+
+    .lang-content { 
+        max-width: 100%; /* Le texte occupe toute la largeur */
+        margin-right: 0; /* Supprime la marge du tiers droit desktop */
+    }
+
     .lang-content h2 { font-size: 30px; }
     
     .fixed-back { right: 20px; bottom: 25px; }
+
+    .info-page .background-image {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        object-position: center !important;
+    }
 }
