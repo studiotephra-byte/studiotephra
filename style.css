@@ -207,13 +207,17 @@ html, body {
 .scroll-container::-webkit-scrollbar { display: none; }
 
 .lang-content {
-    display: none;
+display: none;
     width: 100%;
-    /* On limite la largeur à la moitié de l'écran */
+    /* On conserve la largeur sur la moitié de l'écran */
     max-width: 50vw; 
-margin: 0;
-    word-wrap: break-word; /* Force la coupure des mots trop longs */
-    text-align: left; /* Ou center selon ta préférence esthétique */
+    margin: 0;
+    word-wrap: break-word;
+    
+    /* MODIFICATIONS ICI */
+    text-align: justify; /* Justifie le texte */
+    hyphens: auto;       /* Coupe les mots proprement pour éviter les trous */
+    
     color: #000;
 }
 
