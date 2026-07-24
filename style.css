@@ -265,7 +265,7 @@ display: none;
     .subtitle { font-size: 11px; margin-top: 15px; letter-spacing: 0.12em; }
     
     .footer-links a { 
-        bottom: 80px; 
+        bottom: 90px; 
         font-size: 15px; 
         z-index: 1000;
     }
