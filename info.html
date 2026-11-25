@@ -1,296 +1,101 @@
-/* --- 1. IMPORTATION POLICE --- */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Info | Studio TEPHRA</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="info-page">
 
-/* --- 2. RESET & STABILISATION --- */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100dvh;
-    overflow: hidden; 
-    background-color: #000;
-    font-family: 'Roboto', sans-serif;
-    -webkit-font-smoothing: antialiased;
-}
+    <div class="language-selector">
+        <button onclick="showLang('fr')" id="btn-fr" class="lang-btn active">FR</button>
+        <button onclick="showLang('en')" id="btn-en" class="lang-btn">EN</button>
+        <button onclick="showLang('es')" id="btn-es" class="lang-btn">ES</button>
+    </div>
 
-/* --- 3. STRUCTURE DIAPORAMA (Page Accueil) --- */
-.slideshow {
-    position: relative;
-    width: 100%;
-    height: 100dvh;
-}
-
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    opacity: 0;
-    animation: fadeAnimation 32s infinite; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.slide img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
-
-/* --- 4. TEXTE CENTRAL (Studio Tephra) --- */
-.center-content {
-    z-index: 100;
-    text-align: center;
-    width: 100%;
-}
-
-.title-link {
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-    display: inline-block;
-}
-
-.header-box {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: flex-start; 
-    line-height: 0.82;
-}
-
-.word-studio {
-    font-size: 36px;
-    font-weight: 700; /* Bold */
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-}
-
-.word-tephra {
-    font-size: 110px;
-    font-weight: 900; /* Black */
-    text-transform: uppercase;
-    letter-spacing: -0.01em;
-}
-
-.subtitle {
-    font-size: 16px;
-    font-weight: 400; /* Regular */
-    margin-top: 22px;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    width: 100%;
-}
-
-/* --- 5. FOOTER ACCUEIL --- */
-.footer-links a {
-    position: absolute;
-    bottom: 30px;
-    font-size: 15px;
-    font-weight: 400;
-    text-decoration: none;
-    z-index: 100;
-}
-
-.foot-left { left: 30px; }
-.foot-right { right: 30px; }
-
-/* --- 6. LOGIQUE DES COULEURS (Diaporama) --- */
-.s2, .s3, .s8, .s2 a, .s3 a, .s8 a { color: #FFFFFF; }
-.s1 .center-content, .s5 .center-content, .s6 .center-content { color: #000000; }
-.s1 .footer-links a, .s5 .footer-links a, .s6 .footer-links a { color: #FFFFFF; }
-.s4 .center-content { color: #FFFFFF; }
-.s4 .footer-links a { color: #000000; }
-.s7 .center-content { color: #FFFFFF; }
-.s7 .foot-left { color: #000000; }
-.s7 .foot-right { color: #FFFFFF; }
-
-/* --- 7. ANIMATION --- */
-@keyframes fadeAnimation {
-    0% { opacity: 0; }
-    2% { opacity: 1; }
-    12.5% { opacity: 1; }
-    14.5% { opacity: 0; }
-    100% { opacity: 0; }
-}
-
-.slide:nth-child(1) { animation-delay: 0s; }
-.slide:nth-child(2) { animation-delay: 4s; }
-.slide:nth-child(3) { animation-delay: 8s; }
-.slide:nth-child(4) { animation-delay: 12s; }
-.slide:nth-child(5) { animation-delay: 16s; }
-.slide:nth-child(6) { animation-delay: 20s; }
-.slide:nth-child(7) { animation-delay: 24s; }
-.slide:nth-child(8) { animation-delay: 28s; }
-
-/* --- 8. CONFIGURATION PAGE INFO --- */
-
-.info-page {
-    background-color: #FFFFFF !important;
-}
-
-/* Sélecteur de langue */
-.language-selector {
-    position: fixed;
-    top: 40px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    z-index: 1000;
-}
-
-.lang-btn {
-    background: none;
-    border: none;
-    color: #000;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    cursor: pointer;
-    text-transform: uppercase;
-    opacity: 0.4;
-    transition: opacity 0.3s;
-}
-
-.lang-btn.active {
-    opacity: 1;
-    font-weight: 700;
-}
-
-/* Zone de texte défilante */
-/* --- GESTION DES TEXTES (Page Info) --- */
-.scroll-container {
-    background: transparent;
-    position: fixed;
-    top: 120px;
-    bottom: 80px;
-    width: 100%;
-    overflow-y: auto;
-    overflow-x: hidden; /* Empêche tout débordement horizontal */
+    <div class="scroll-container">
         
-        /* Correction de l'affichage du texte */
-    display: block; /* On repasse en block pour le flux naturel du texte */
-    padding: 0 25px;
-    box-sizing: border-box; /* Important pour que le padding soit inclus dans la largeur */
-    z-index: 10;
-    padding: 0 20px;
-    scrollbar-width: none;
-    
-    /* On utilise flexbox pour gérer l'alignement global */
-    display: flex;
-    justify-content: flex-end; /* Aligne le contenu à droite sur desktop */
-}
+        <div id="lang-fr" class="lang-content active">
+            <h2>TEPHRA</h2>
+            <p>L’équipe TEPHRA s’est construite au gré des rencontres, notamment, à l’Ecole Nationale d’Architecture de Montpellier. Cette association est issue d’une appétence pour la recherche en architecture et par une volonté profonde de travailler ensemble au travers de valeurs communes. Elle développe ses travaux au croisement de différentes spécialités, plaçant l’architecture comme socle vivant de la réflexion.</p>
+            <p>L’interdisciplinarité, l’échange et le dialogue fondent le guide des projets proposées. Elles se situent dans un champ comprenant des créations sculpturales, architecturales, scénographiques, environnementales et sensitives. Elles s’inspirent des élements contextuels et portent un regard appuyé sur la localité, ses acteurs naturels et humains.</p>
+            <p>Cette fusion de différents médias de création enrichit les propositions, et forge, projet après projet l’identité affirmée de cette structure. Ce cheminement façonne des projets aboutis, rigoureux et de caractère.</p>
+            
+            <h3>MEMBRES</h3>
+            <p><strong>Fabrice Henry</strong>, Architecte DE, Constructeur, Bijoutier<br>
+            Diplômé de l’ENSA Montpellier en 2017, Fabrice Henry développe une pratique transversale entre architecture, design et fabrication manuelle. Travaillant avec une ressourcerie locale, il explore le réemploi des matériaux à travers la création de mobilier et de bijoux. Il cofonde Studio Tephra et encadre des workshops de construction de micro-architecture en France et aux Caraïbes (lauréat et / ou primé : Ordre Archi LR, Polyculture, Festival des Cabanes, Matjoukann).</p>
+            
+            <p><strong>Mathieu Nouhen</strong>, Architecte HMONP, Constructeur, Enseinant, Artiste plasticien<br>
+            Diplômé de l’ENSA Montpellier en 2016, Mathieu Nouhen développe une pratique centrée sur l’architecture éphémère et la recherche matérielle. Auteur de plusieurs oeuvres a la frontière de l’architecture et du land art, il confonde par la suite Studio tephra pour explorer les qualités sensibles des matériaux dans des contextes temporaires et expérimentaux. (lauréat et / ou primé : Ordre Archi LR, Buildner, TerraViva, Matjoukann, Polyculture, Festival des Cabanes, Horizon Sancy, Europan).</p>
+            
+            <p><strong>Quentin Jousselme</strong>, Architecte HMONP, Constructeur, Concepteur permaculture<br>
+            Diplômé de l’ENSA Montpellier en 2016, et titulaire d’un master en art et architecture, Quentin Jousselme cofonde Studio Tephra et ouvre son atelier d’architecture en Colombie. Titulaire d’une certification en conception den permaculture, il devoloppe depuis Santa Marta une expertise en architecture tropicale et représente Studio Tephra en amérique latine, ancrant la démarche du studio dans des territoires et des savoir-faire nouveaux. (lauréat et / ou primé : Ordre Archi LR, Matjoukann).</p>
+        </div>
 
-.scroll-container::-webkit-scrollbar { display: none; }
+        <div id="lang-en" class="lang-content">
+            <h2>TEPHRA</h2>
+            <p>The TEPHRA team was built through various encounters, particularly at the National School of Architecture in Montpellier. This association stems from a keen interest in architectural research and a deep desire to work together through shared values. It develops its work at the intersection of different specialties, placing architecture as the living foundation of reflection.</p>
+            <p>Interdisciplinarity, exchange, and dialogue form the guiding principles of the proposed projects. These projects span a range of fields, including sculptural, architectural, scenographic, environmental, and sensory creations. They draw inspiration from contextual elements and take a close look at the locality, its natural and human actors.</p>
+            <p>This fusion of different creative media enriches the proposals and, project after project, forges the distinctive identity of this organization. This journey shapes projects that are accomplished, rigorous, and full of character.</p>
+            
+            <h3>MEMBERS</h3>
+            <p><strong>Fabrice Henry</strong>, Architect, Builder, Jeweler<br>
+            Graduated from ENSA Montpellier in 2017, Fabrice Henry has developed a cross-disciplinary practice spanning architecture, design and handcraft. Working with a local resource and reuse center, he explores material repurposing through the creation of furniture and jewelry. He co-founded Studio Tephra and leads micro-architecture construction workshops in France and the Caribbean. (laureate and/or award winner: Ordre Archi LR, Polyculture, Festival des Cabanes, Matjoukann)</p>
+            
+            <p><strong>Mathieu Nouhen</strong>,Licenced Architect, Builder, Teacher, Artist<br>
+            Graduated from ENSA Montpellier in 2016, Mathieu Nouhen has developed a practice centered on ephemeral architecture and material research. Author of several works at the intersection of architecture and land art, he later co-founded Studio Tephra to explore the sensory qualities of materials in temporary and experimental contexts. (laureate and/or award winner: Ordre Archi LR, Buildner, TerraViva, Matjoukann, Polyculture, Festival des Cabanes, Horizon Sancy, Europan)</p>
+            
+            <p><strong>Quentin Jousselme</strong>, Licenced Architect, Builder, Certified in permaculture design<br>
+            Graduated from ENSA Montpellier in 2016 and holding a master's degree in art and architecture, Quentin Jousselme co-founded Studio Tephra and opened his architecture workshop in Colombia. Holding a certification in permaculture design, he has been developing expertise in tropical architecture from Santa Marta, and represents Studio Tephra in Latin America, grounding the studio's approach in new territories and new areas of expertise. (laureate and/or award winner: Ordre Archi LR, Matjoukann)</p>
+        </div>
 
-.lang-content {
-    display: none;
-    width: 100%;
-    /* On conserve la largeur sur la moitié de l'écran */
-    max-width: 50vw; 
-    margin: 0;
-    word-wrap: break-word;
-    
-    /* MODIFICATIONS ICI */
-    text-align: justify; /* Justifie le texte */
-    hyphens: auto;       /* Coupe les mots proprement pour éviter les trous */
-    
-    color: #000;
-}
+        <div id="lang-es" class="lang-content">
+            <h2>TEPHRA</h2>
+            <p>El equipo TEPHRA se construyó a lo largo de los encuentros, especialmente en la Escuela Nacional de Arquitectura de Montpellier. Esta asociación surge de un apetito por la investigación en arquitectura y de una profunda voluntad de trabajar juntos a través de valores comunes. Desarrolla sus trabajos en la intersección de diferentes especialidades, situando la arquitectura como base viva de la reflexión.</p>
+            <p>La interdisciplinariedad, el intercambio y el diálogo constituyen la guía de los proyectos propuestos. Estos se sitúan en un campo que comprende creaciones escultóricas, arquitectónicas, escenográficas, medioambientales y sensitivas. Se inspiran en los elementos contextuales y ponen una mirada profunda sobre la localidad, sus actores naturales y humanos.</p>
+            <p>Esta fusión de diferentes medios de creación enriquece las propuestas y forja, proyecto tras proyecto, la identidad afirmada de esta estructura. Este recorrido da forma a proyectos acabados, rigurosos y con carácter.</p>
+            
+            <h3>MIEMBROS</h3>
+            <p><strong>Fabrice Henry</strong>, Arquitecto DE, Constructor, Joyero<br>
+            Graduado de la ENSA Montpellier en 2017, Fabrice Henry desarrolla una práctica transversal entre arquitectura, diseño y fabricación artesanal. Trabajando con un centro local de reutilización de materiales, explora el reempleo a través de la creación de mobiliario y joyería. Cofunda Studio Tephra y coordina talleres de construcción de micro-arquitectura en Francia y el Caribe. (laureado y/o premiado: Ordre Archi LR, Polyculture, Festival des Cabanes, Matjoukann)</p>
+            
+            <p><strong>Mathieu Nouhen</strong>, Arquitecto licenciado, Constructor, Docente, Artista plástico<br>
+            Graduado de la ENSA Montpellier en 2016, Mathieu Nouhen desarrolla una práctica centrada en la arquitectura efímera y la investigación material. Autor de varias obras en la frontera entre la arquitectura y el land art, cofunda posteriormente Studio Tephra para explorar las cualidades sensibles de los materiales en contextos temporales y experimentales. (laureado y/o premiado: Ordre Archi LR, Buildner, TerraViva, Matjoukann, Polyculture, Festival des Cabanes, Horizon Sancy, Europan)</p>
+            
+            <p><strong>Quentin Jousselme</strong>, Arquitecto licenciado, Constructor, Certificado en diseño de permacultura<br>
+            Graduado de la ENSA Montpellier en 2016 y titulado con un máster en arte y arquitectura, Quentin Jousselme cofunda Studio Tephra y abre su estudio de arquitectura en Colombia. Con una certificación en diseño de permacultura, desarrolla desde Santa Marta una experiencia en arquitectura tropical y representa a Studio Tephra en América Latina, arraigando el enfoque del estudio en nuevos territorios y nuevos saberes. (laureado y/o premiado: Ordre Archi LR, Matjoukann)</p>
+        </div>
 
-.lang-content.active { 
-    display: block; 
-}
+    </div>
 
-.lang-content.active { display: block; }
+    <div class="fixed-back">
+        <a href="index.html">retour / back / atras</a>
+    </div>
 
-.lang-content h2 { font-weight: 900; font-size: 40px; margin-bottom: 20px; }
-.lang-content h3 { font-weight: 700; font-size: 20px; margin-top: 30px; }
-.lang-content p { font-weight: 400; line-height: 1.6; margin-bottom: 15px; }
+   <script>
+    const scrollContainer = document.querySelector('.scroll-container');
+    const bgContainer = document.querySelector('.background-container');
 
-/* Bouton Retour */
-.fixed-back {
-    position: fixed;
-    bottom: 30px;
-    right: 30px; /* Aligné à droite comme sur l'accueil */
-    z-index: 1000;
-}
+    scrollContainer.addEventListener('scroll', () => {
+        // On récupère la valeur du scroll (nombre de pixels descendus)
+        let scrollValue = scrollContainer.scrollTop;
+        
+        // On déplace l'image vers le bas d'une valeur égale au scroll
+        // L'image descend alors que le texte monte
+        bgContainer.style.transform = `translateY(${scrollValue}px)`;
+    });
 
-.fixed-back a {
-    font-size: 15px;
-    font-weight: 400;
-    text-decoration: none;
-    color: #000;
-}
-
-/* --- 9. ADAPTATION MOBILE (< 768px) --- */
-@media (max-width: 768px) {
-    
-    /* 0. Fond de page blanc forcé */
-    .info-page {
-        background-color: #FFFFFF !important;
+    // On réinitialise la position si l'utilisateur change de langue
+    function showLang(lang) {
+        document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+        document.getElementById('lang-' + lang).classList.add('active');
+        document.getElementById('btn-' + lang).classList.add('active');
+        
+        scrollContainer.scrollTop = 0;
+        bgContainer.style.transform = `translateY(0px)`;
     }
-
-    /* Force le respect de la zone d'affichage réelle sur Brave/Android */
-    html, body, .slideshow {
-        height: 100dvh; 
-    }
-
-    /* --- Accueil --- */
-    .word-studio { font-size: 22px; }
-    .word-tephra { font-size: 64px; }
-    .subtitle { font-size: 11px; margin-top: 15px; letter-spacing: 0.12em; }
-    
-    .footer-links a { 
-        bottom: 90px; 
-        font-size: 15px; 
-        z-index: 1000;
-    }
-    .foot-left { left: 20px; }
-    .foot-right { right: 20px; }
-
-    /* --- Page Info --- */
-    .scroll-container { 
-        position: fixed;
-        top: 80px; 
-        bottom: 80px; 
-        width: 100%;
-        justify-content: center; 
-        padding: 0 25px;
-        z-index: 10;
-        overflow-y: auto; /* Le scroll se passe ici */
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .lang-content { 
-        max-width: 100%; 
-        margin-right: 0; 
-    }
-
-    .lang-content h2 { font-size: 30px; }
-    
-    /* L'interface (Langues et Retour) */
-    .language-selector, 
-    .fixed-back { 
-        z-index: 30; 
-    }
-
-    .fixed-back {
-        right: 20px; 
-        bottom: 25px; 
-    }
-
-    .language-selector {
-        top: 25px;
-        gap: 20px;
-    }
-
-    .lang-btn { font-size: 14px; }
-}
+</script>
+</body>
+</html>
