@@ -7,7 +7,7 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100dvh;
-    overflow: hidden;
+    overflow: hidden; 
     background-color: #000;
     font-family: 'Roboto', sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -25,9 +25,9 @@ html, body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     opacity: 0;
-    animation: fadeAnimation 32s infinite;
+    animation: fadeAnimation 32s infinite; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -60,7 +60,7 @@ html, body {
 .header-box {
     display: inline-flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; 
     line-height: 0.82;
 }
 
@@ -129,9 +129,9 @@ html, body {
 .slide:nth-child(8) { animation-delay: 28s; }
 
 /* --- 8. CONFIGURATION PAGE INFO --- */
+
 .info-page {
-    background-color: #FFFFFF;
-    color: #000000;
+    background-color: #FFFFFF !important;
 }
 
 /* Sélecteur de langue */
@@ -164,7 +164,8 @@ html, body {
     font-weight: 700;
 }
 
-/* Zone de texte défilante (Page Info) */
+/* Zone de texte défilante */
+/* --- GESTION DES TEXTES (Page Info) --- */
 .scroll-container {
     background: transparent;
     position: fixed;
@@ -172,57 +173,53 @@ html, body {
     bottom: 80px;
     width: 100%;
     overflow-y: auto;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Empêche tout débordement horizontal */
+        
+        /* Correction de l'affichage du texte */
+    display: block; /* On repasse en block pour le flux naturel du texte */
     padding: 0 25px;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Important pour que le padding soit inclus dans la largeur */
     z-index: 10;
+    padding: 0 20px;
     scrollbar-width: none;
+    
+    /* On utilise flexbox pour gérer l'alignement global */
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end; /* Aligne le contenu à droite sur desktop */
 }
 
-.scroll-container::-webkit-scrollbar {
-    display: none;
-}
+.scroll-container::-webkit-scrollbar { display: none; }
 
 .lang-content {
     display: none;
     width: 100%;
-    max-width: 50vw;
+    /* On conserve la largeur sur la moitié de l'écran */
+    max-width: 50vw; 
     margin: 0;
-    overflow-wrap: break-word;
-    text-align: justify;
-    hyphens: auto;
+    word-wrap: break-word;
+    
+    /* MODIFICATIONS ICI */
+    text-align: justify; /* Justifie le texte */
+    hyphens: auto;       /* Coupe les mots proprement pour éviter les trous */
+    
     color: #000;
 }
 
-.lang-content.active {
-    display: block;
+.lang-content.active { 
+    display: block; 
 }
 
-.lang-content h2 {
-    font-weight: 900;
-    font-size: 40px;
-    margin-bottom: 20px;
-}
+.lang-content.active { display: block; }
 
-.lang-content h3 {
-    font-weight: 700;
-    font-size: 20px;
-    margin-top: 30px;
-}
-
-.lang-content p {
-    font-weight: 400;
-    line-height: 1.6;
-    margin-bottom: 15px;
-}
+.lang-content h2 { font-weight: 900; font-size: 40px; margin-bottom: 20px; }
+.lang-content h3 { font-weight: 700; font-size: 20px; margin-top: 30px; }
+.lang-content p { font-weight: 400; line-height: 1.6; margin-bottom: 15px; }
 
 /* Bouton Retour */
 .fixed-back {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    right: 30px; /* Aligné à droite comme sur l'accueil */
     z-index: 1000;
 }
 
@@ -235,52 +232,59 @@ html, body {
 
 /* --- 9. ADAPTATION MOBILE (< 768px) --- */
 @media (max-width: 768px) {
+    
+    /* 0. Fond de page blanc forcé */
+    .info-page {
+        background-color: #FFFFFF !important;
+    }
+
+    /* Force le respect de la zone d'affichage réelle sur Brave/Android */
     html, body, .slideshow {
-        height: 100dvh;
+        height: 100dvh; 
     }
 
     /* --- Accueil --- */
     .word-studio { font-size: 22px; }
     .word-tephra { font-size: 64px; }
     .subtitle { font-size: 11px; margin-top: 15px; letter-spacing: 0.12em; }
-
-    .footer-links a {
-        bottom: 90px;
-        font-size: 15px;
+    
+    .footer-links a { 
+        bottom: 90px; 
+        font-size: 15px; 
         z-index: 1000;
     }
     .foot-left { left: 20px; }
     .foot-right { right: 20px; }
 
     /* --- Page Info --- */
-    .scroll-container {
+    .scroll-container { 
         position: fixed;
-        top: 80px;
-        bottom: 80px;
+        top: 80px; 
+        bottom: 80px; 
         width: 100%;
-        justify-content: center;
+        justify-content: center; 
         padding: 0 25px;
         z-index: 10;
-        overflow-y: auto;
+        overflow-y: auto; /* Le scroll se passe ici */
         -webkit-overflow-scrolling: touch;
     }
 
-    .lang-content {
-        max-width: 100%;
-        margin-right: 0;
-        text-align: left;
+    .lang-content { 
+        max-width: 100%; 
+        margin-right: 0; 
     }
 
     .lang-content h2 { font-size: 30px; }
-
-    .language-selector,
-    .fixed-back {
-        z-index: 30;
+    
+    /* L'interface (Langues et Retour) */
+    .language-selector, 
+    .fixed-back { 
+        z-index: 30; 
     }
 
     .fixed-back {
-        right: 20px;
-        bottom: 25px;
+        right: 20px; 
+        bottom: 25px; 
     }
 
     .language-selector {
