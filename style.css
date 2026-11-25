@@ -1,606 +1,334 @@
 /* --- 1. IMPORTATION POLICE --- */
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
 
-
 /* --- 2. RESET & STABILISATION --- */
-
 html, body {
-
-margin: 0;
-
-padding: 0;
-
-width: 100%;
-
-height: 100dvh;
-
-overflow: hidden;
-
-background-color: #000;
-
-font-family: 'Roboto', sans-serif;
-
--webkit-font-smoothing: antialiased;
-
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100dvh;
+    overflow: hidden; 
+    background-color: #000;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
-
 
 /* --- 3. STRUCTURE DIAPORAMA (Page Accueil) --- */
-
 .slideshow {
-
-position: relative;
-
-width: 100%;
-
-height: 100dvh;
-
+    position: relative;
+    width: 100%;
+    height: 100dvh;
 }
-
 
 .slide {
-
-position: absolute;
-
-top: 0;
-
-left: 0;
-
-width: 100%;
-
-height: 100vh;
-
-opacity: 0;
-
-animation: fadeAnimation 32s infinite;
-
-display: flex;
-
-justify-content: center;
-
-align-items: center;
-
-text-align: center;
-
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    animation: fadeAnimation 32s infinite; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-
 
 .slide img {
-
-position: absolute;
-
-width: 100%;
-
-height: 100%;
-
-object-fit: cover;
-
-z-index: -1;
-
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
 }
-
 
 /* --- 4. TEXTE CENTRAL (Studio Tephra) --- */
-
 .center-content {
-
-z-index: 100;
-
-text-align: center;
-
-width: 100%;
-
+    z-index: 100;
+    text-align: center;
+    width: 100%;
 }
-
 
 .title-link {
-
-text-decoration: none;
-
-color: inherit;
-
-cursor: pointer;
-
--webkit-tap-highlight-color: transparent;
-
-display: inline-block;
-
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
 }
-
 
 .header-box {
-
-display: inline-flex;
-
-flex-direction: column;
-
-align-items: flex-start;
-
-line-height: 0.82;
-
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    line-height: 0.82;
 }
-
 
 .word-studio {
-
-font-size: 36px;
-
-font-weight: 700; /* Bold */
-
-text-transform: uppercase;
-
-letter-spacing: 0.12em;
-
+    font-size: 36px;
+    font-weight: 700; /* Bold */
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
 }
-
 
 .word-tephra {
-
-font-size: 110px;
-
-font-weight: 900; /* Black */
-
-text-transform: uppercase;
-
-letter-spacing: -0.01em;
-
+    font-size: 110px;
+    font-weight: 900; /* Black */
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
 }
-
 
 .subtitle {
-
-font-size: 16px;
-
-font-weight: 400; /* Regular */
-
-margin-top: 22px;
-
-text-transform: uppercase;
-
-letter-spacing: 0.2em;
-
-width: 100%;
-
+    font-size: 16px;
+    font-weight: 400; /* Regular */
+    margin-top: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 100%;
 }
-
 
 /* --- 5. FOOTER ACCUEIL --- */
-
 .footer-links a {
-
-position: absolute;
-
-bottom: 30px;
-
-font-size: 15px;
-
-font-weight: 400;
-
-text-decoration: none;
-
-z-index: 100;
-
+    position: absolute;
+    bottom: 30px;
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    z-index: 100;
 }
-
 
 .foot-left { left: 30px; }
-
 .foot-right { right: 30px; }
 
-
 /* --- 6. LOGIQUE DES COULEURS (Diaporama) --- */
-
 .s2, .s3, .s8, .s2 a, .s3 a, .s8 a { color: #FFFFFF; }
-
 .s1 .center-content, .s5 .center-content, .s6 .center-content { color: #000000; }
-
 .s1 .footer-links a, .s5 .footer-links a, .s6 .footer-links a { color: #FFFFFF; }
-
 .s4 .center-content { color: #FFFFFF; }
-
 .s4 .footer-links a { color: #000000; }
-
 .s7 .center-content { color: #FFFFFF; }
-
 .s7 .foot-left { color: #000000; }
-
 .s7 .foot-right { color: #FFFFFF; }
 
-
 /* --- 7. ANIMATION --- */
-
 @keyframes fadeAnimation {
-
-0% { opacity: 0; }
-
-2% { opacity: 1; }
-
-12.5% { opacity: 1; }
-
-14.5% { opacity: 0; }
-
-100% { opacity: 0; }
-
+    0% { opacity: 0; }
+    2% { opacity: 1; }
+    12.5% { opacity: 1; }
+    14.5% { opacity: 0; }
+    100% { opacity: 0; }
 }
 
-
 .slide:nth-child(1) { animation-delay: 0s; }
-
 .slide:nth-child(2) { animation-delay: 4s; }
-
 .slide:nth-child(3) { animation-delay: 8s; }
-
 .slide:nth-child(4) { animation-delay: 12s; }
-
 .slide:nth-child(5) { animation-delay: 16s; }
-
 .slide:nth-child(6) { animation-delay: 20s; }
-
 .slide:nth-child(7) { animation-delay: 24s; }
-
 .slide:nth-child(8) { animation-delay: 28s; }
-
 
 /* --- 8. CONFIGURATION PAGE INFO --- */
 
-
 .info-page {
-
-background-color: #FFFFFF !important;
-
+    background-color: #FFFFFF !important;
 }
-
 
 .info-page .background-container {
-
-position: fixed;
-
-top: 0;
-
-left: 0;
-
-width: 100%;
-
-height: 100vh;
-
-z-index: 1;
-
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
 }
-
 
 .info-page .background-image {
-
-width: 100%;
-
-height: 100%;
-
-object-fit: cover;
-
-object-position: center;
-
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
-
 
 /* Sélecteur de langue */
-
 .language-selector {
-
-position: fixed;
-
-top: 40px;
-
-left: 0;
-
-width: 100%;
-
-display: flex;
-
-justify-content: center;
-
-gap: 30px;
-
-z-index: 1000;
-
+    position: fixed;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    z-index: 1000;
 }
-
 
 .lang-btn {
-
-background: none;
-
-border: none;
-
-color: #000;
-
-font-family: 'Roboto', sans-serif;
-
-font-weight: 400;
-
-font-size: 16px;
-
-cursor: pointer;
-
-text-transform: uppercase;
-
-opacity: 0.4;
-
-transition: opacity 0.3s;
-
+    background: none;
+    border: none;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
+    opacity: 0.4;
+    transition: opacity 0.3s;
 }
-
 
 .lang-btn.active {
-
-opacity: 1;
-
-font-weight: 700;
-
+    opacity: 1;
+    font-weight: 700;
 }
-
 
 /* Zone de texte défilante */
-
 /* --- GESTION DES TEXTES (Page Info) --- */
-
 .scroll-container {
+    background: transparent;
+    position: fixed;
+    top: 120px;
+    bottom: 80px;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden; /* Empêche tout débordement horizontal */
 
-background: transparent;
+        /* Correction de l'affichage du texte */
+    display: block; /* On repasse en block pour le flux naturel du texte */
+    padding: 0 25px;
+    box-sizing: border-box; /* Important pour que le padding soit inclus dans la largeur */
+    z-index: 10;
+    padding: 0 20px;
+    scrollbar-width: none;
 
-position: fixed;
-
-top: 120px;
-
-bottom: 80px;
-
-width: 100%;
-
-overflow-y: auto;
-
-overflow-x: hidden; /* Empêche tout débordement horizontal */
-
-/* Correction de l'affichage du texte */
-
-display: block; /* On repasse en block pour le flux naturel du texte */
-
-padding: 0 25px;
-
-box-sizing: border-box; /* Important pour que le padding soit inclus dans la largeur */
-
-z-index: 10;
-
-padding: 0 20px;
-
-scrollbar-width: none;
-
-/* On utilise flexbox pour gérer l'alignement global */
-
-display: flex;
-
-justify-content: flex-end; /* Aligne le contenu à droite sur desktop */
-
+    /* On utilise flexbox pour gérer l'alignement global */
+    display: flex;
+    justify-content: flex-end; /* Aligne le contenu à droite sur desktop */
 }
-
 
 .scroll-container::-webkit-scrollbar { display: none; }
 
-
 .lang-content {
-
 display: none;
+    width: 100%;
+    /* On conserve la largeur sur la moitié de l'écran */
+    max-width: 50vw; 
+    margin: 0;
+    word-wrap: break-word;
 
-width: 100%;
+    /* MODIFICATIONS ICI */
+    text-align: justify; /* Justifie le texte */
+    hyphens: auto;       /* Coupe les mots proprement pour éviter les trous */
 
-/* On conserve la largeur sur la moitié de l'écran */
-
-max-width: 50vw;
-
-margin: 0;
-
-word-wrap: break-word;
-
-/* MODIFICATIONS ICI */
-
-text-align: justify; /* Justifie le texte */
-
-hyphens: auto; /* Coupe les mots proprement pour éviter les trous */
-
-color: #000;
-
+    color: #000;
 }
 
-
-.lang-content.active {
-
-display: block;
-
+.lang-content.active { 
+    display: block; 
 }
-
 
 .lang-content.active { display: block; }
 
-
 .lang-content h2 { font-weight: 900; font-size: 40px; margin-bottom: 20px; }
-
 .lang-content h3 { font-weight: 700; font-size: 20px; margin-top: 30px; }
-
 .lang-content p { font-weight: 400; line-height: 1.6; margin-bottom: 15px; }
 
-
 /* Bouton Retour */
-
 .fixed-back {
-
-position: fixed;
-
-bottom: 30px;
-
-right: 30px; /* Aligné à droite comme sur l'accueil */
-
-z-index: 1000;
-
+    position: fixed;
+    bottom: 30px;
+    right: 30px; /* Aligné à droite comme sur l'accueil */
+    z-index: 1000;
 }
-
 
 .fixed-back a {
-
-font-size: 15px;
-
-font-weight: 400;
-
-text-decoration: none;
-
-color: #000;
-
+    font-size: 15px;
+    font-weight: 400;
+    text-decoration: none;
+    color: #000;
 }
-
 
 /* --- 9. ADAPTATION MOBILE (< 768px) --- */
-
 @media (max-width: 768px) {
 
-/* 0. Fond de page blanc forcé */
+    /* 0. Fond de page blanc forcé */
+    .info-page {
+        background-color: #FFFFFF !important;
+    }
 
-.info-page {
+    /* Force le respect de la zone d'affichage réelle sur Brave/Android */
+    html, body, .slideshow, .info-page .background-container {
+        height: 100dvh; 
+    }
 
-background-color: #FFFFFF !important;
+    /* --- Accueil --- */
+    .word-studio { font-size: 22px; }
+    .word-tephra { font-size: 64px; }
+    .subtitle { font-size: 11px; margin-top: 15px; letter-spacing: 0.12em; }
 
-}
+    .footer-links a { 
+        bottom: 80px; 
+        bottom: 90px; 
+        font-size: 15px; 
+        z-index: 1000;
+    }
+    .foot-left { left: 20px; }
+    .foot-right { right: 20px; }
 
+    /* --- Page Info (Effet Sandwich PNG) --- */
 
-/* Force le respect de la zone d'affichage réelle sur Brave/Android */
-
-html, body, .slideshow, .info-page .background-container {
-
-height: 100dvh;
-
-}
-
-
-/* --- Accueil --- */
-
-.word-studio { font-size: 22px; }
-
-.word-tephra { font-size: 64px; }
-
-.subtitle { font-size: 11px; margin-top: 15px; letter-spacing: 0.12em; }
-
-.footer-links a {
-
-bottom: 90px;
-
-font-size: 15px;
-
-z-index: 1000;
-
-}
-
-.foot-left { left: 20px; }
-
-.foot-right { right: 20px; }
-
-
-/* --- Page Info (Effet Sandwich PNG) --- */
-
-/* 1. L'image PNG passe au PREMIER PLAN (Couche 20) */
-
+    /* 1. L'image PNG passe au PREMIER PLAN (Couche 20) */
 .info-page .background-container {
+    position: fixed; /* Important pour le mouvement via JS */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    z-index: 20; 
+    pointer-events: none;
+    will-change: transform; /* Optimise la fluidité du mouvement */
+}
 
-position: fixed; /* Important pour le mouvement via JS */
-
-top: 0;
-
-left: 0;
-
-width: 100vw;
-
-height: 100dvh;
-
-z-index: 20;
-
-pointer-events: none;
-
-will-change: transform; /* Optimise la fluidité du mouvement */
-
+.scroll-container { 
+    position: fixed;
+    top: 80px; 
+    bottom: 80px; 
+    width: 100%;
+    justify-content: center; 
+    padding: 0 25px;
+    z-index: 10;
+    overflow-y: auto; /* Le scroll se passe ici */
+    -webkit-overflow-scrolling: touch;
 }
 
 
-.scroll-container {
+    .lang-content { 
+        max-width: 100%; 
+        margin-right: 0; 
+    }
 
-position: fixed;
+    .lang-content h2 { font-size: 30px; }
 
-top: 80px;
+    /* 3. L'interface (Langues et Retour) doit rester au-dessus du PNG (Couche 30) */
+    .language-selector, 
+    .fixed-back { 
+        z-index: 30; 
+    }
 
-bottom: 80px;
+    .fixed-back {
+        right: 20px; 
+        bottom: 25px; 
+    }
 
-width: 100%;
+    .language-selector {
+        top: 25px;
+        gap: 20px;
+    }
 
-justify-content: center;
+    .lang-btn { font-size: 14px; }
 
-padding: 0 25px;
-
-z-index: 10;
-
-overflow-y: auto; /* Le scroll se passe ici */
-
--webkit-overflow-scrolling: touch;
-
-}
-
-
-.lang-content {
-
-max-width: 100%;
-
-margin-right: 0;
-
-}
-
-
-.lang-content h2 { font-size: 30px; }
-
-/* 3. L'interface (Langues et Retour) doit rester au-dessus du PNG (Couche 30) */
-
-.language-selector,
-
-.fixed-back {
-
-z-index: 30;
-
-}
-
-
-.fixed-back {
-
-right: 20px;
-
-bottom: 25px;
-
-}
-
-
-.language-selector {
-
-top: 25px;
-
-gap: 20px;
-
-}
-
-
-.lang-btn { font-size: 14px; }
-
-
-.info-page .background-image {
-
-width: 100vw;
-
-height: 100dvh;
-
-object-fit: cover;
-
-object-position: center !important;
-
-}
-
+    .info-page .background-image {
+        width: 100vw;
+        height: 100dvh;
+        object-fit: cover;
+        object-position: center !important;
+    }
 }
